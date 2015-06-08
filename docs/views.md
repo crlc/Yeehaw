@@ -19,8 +19,8 @@
 ![index-show]
 
 [new-session]: ./wireframes/new_session.png
-[feed-show]: ./wireframes/feed_show.png
-[blog-show]: ./wireframes/group_show.png
+[feed-show]: ./wireframes/feed_show.PNG
+[group-show]: ./wireframes/group_show.png
 [post-show]: ./wireframes/post_show.png
 [post-form]: ./wireframes/post_form.png
 [index-show]: ./wireframes/index_show.png
