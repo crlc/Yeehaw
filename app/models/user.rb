@@ -5,6 +5,11 @@ class User < ActiveRecord::Base
 
   after_initialize :ensure_session_token
 
+  has_many :posts, dependent: :destroy
+  has_many :replies, dependent: :destroy
+  has_many :followings
+  has_many :groups, through: :followings
+
   def self.find_by_credentials(username, password)
     user = User.find_by(username: username)
     return nil unless user && user.is_password?(password)
