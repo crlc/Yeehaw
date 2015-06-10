@@ -9,12 +9,12 @@ Yeehaw is a clone of Yik Yak built on Rails and Backbone. Users can:
 
 <!-- This is a Markdown checklist. Use it to keep track of your progress! -->
 
-- [ ] Create accounts
-- [ ] Create sessions (log in)
-- [ ] Create groups
-- [ ] Create posts
-- [ ] Create post replies
-- [ ] View posts and replies
+- [x] Create accounts
+- [x] Create sessions (log in)
+- [x] Create groups
+- [x] Create posts
+- [x] Create post replies
+- [x] View posts and replies
 - [ ] Subscribe to groups
 - [ ] Leave groups
 - [ ] View a feed of subscribed groups
