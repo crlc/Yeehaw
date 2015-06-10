@@ -7,7 +7,7 @@ class User < ActiveRecord::Base
 
   has_many :posts, dependent: :destroy
   has_many :replies, dependent: :destroy
-  has_many :followings
+  has_many :followings, foreign_key: :follower_id
   has_many :groups, through: :followings
 
   def self.find_by_credentials(username, password)

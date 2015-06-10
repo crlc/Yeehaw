@@ -21,7 +21,7 @@ class Api::GroupsController < ApplicationController
   end
 
   def show
-    @group = Group.includes(:members, posts: :replies).find(params[:id])
+    @group = Group.includes(:users, posts: :replies).find(params[:id])
 
     if @group.member?(current_user)
       render json: @group

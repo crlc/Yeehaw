@@ -3,10 +3,9 @@ class Group < ActiveRecord::Base
 
   has_many :posts
   has_many :followings, dependent: :destroy
-  has_many :users, through: :followings
+  has_many :users, through: :followings, source: :follower
 
   def member?(u)
-    return true if u.id == self.user_id
-    followings.where(user_id: u.id).exists?
+    followings.where(follower_id: u.id).exists?
   end
 end
