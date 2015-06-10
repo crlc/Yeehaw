@@ -1,4 +1,4 @@
-class RepliesController < ApplicationController
+class Api::RepliesController < ApplicationController
   def create
     @reply = Reply.new(reply_params)
     @reply.author_id = current_user.id

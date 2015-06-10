@@ -1,5 +1,4 @@
-class PostsController < ApplicationController
-  before_filter :require_signed_in!
+class Api::PostsController < ApplicationController
   def new
     @post = Post.new
   end
