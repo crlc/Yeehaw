@@ -1,49 +1,41 @@
 class Api::PostsController < ApplicationController
-  def new
-    @post = Post.new
-  end
-
-  def show
-    @post = Post.find(params[:id])
-  end
-
-  def edit
-    @post = Post.find(params[:id])
-  end
-
-  def index
-    @posts = Post.all
-    @posts = @posts.select { |post| post.author_id == current_user.id }
-  end
-
   def create
-    @post = Post.new(post_params)
+    @post = current_group.posts.new(post_params)
     @post.author_id = current_user.id
-    if @post.save
-      redirect_to post_url(@post)
-    else
-      flash.now[:errors] = @post.errors.full_messages
-      render :new
-    end
-  end
 
-  def update
-    @post = Post.find(params[:id])
-    if @post.update(post_params)
-      redirect_to post_url(@post)
+    if @post.save
+      render json: @post
     else
-      flash.now[:errors] = @post.errors.full_messages
-      render :edit
+      render json: @post.errors.full_messages, status: :unprocessable_entity
     end
   end
 
   def destroy
     @post = Post.find(params[:id])
     @post.destroy
-    redirect_to posts_url
+    render json: { message: 'deleted' }
+  end
+
+  def index
+    @posts = current_group.posts
+    render json: @posts
+  end
+
+  def show
+    @post = Post.find(params[:id])
+    render json: @post
   end
 
   private
+
+  def current_group
+    if params[:id]
+      @post = Post.find(params[:id])
+      @group = @post.group
+    elsif params[:post]
+      @group = Group.find(params[:post][:group_id])
+    end
+  end
 
   def post_params
     params.require(:post).permit(:handle, :body)

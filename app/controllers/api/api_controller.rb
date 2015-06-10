@@ -1,8 +1,8 @@
 class Api::ApiController < ApplicationController
   before_action :require_signed_in!
 
-  def require_board_member!
-    redirect_to new_session_url unless current_board.is_member?(current_user)
+  def require_group_member!
+    redirect_to new_session_url unless current_group.member?(current_user)
   end
 
   def require_signed_in!

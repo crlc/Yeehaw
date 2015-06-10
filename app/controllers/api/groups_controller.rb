@@ -11,7 +11,7 @@ class Api::GroupsController < ApplicationController
 
   def destroy
     @group = Group.find(params[:id])
-    @group.try(:destroy)
+    @group.destroy
     render json: {}
   end
 
@@ -21,7 +21,13 @@ class Api::GroupsController < ApplicationController
   end
 
   def show
-    @group = Group.find(params[:id])
+    @group = Group.includes(:members, posts: :replies).find(params[:id])
+
+    if @group.member?(current_user)
+      render json: @group
+    else
+      render json: ["Can't view these posts"], status: :unprocessable_entity
+    end
   end
 
   private

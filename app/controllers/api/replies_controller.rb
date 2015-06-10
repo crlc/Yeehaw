@@ -2,19 +2,18 @@ class Api::RepliesController < ApplicationController
   def create
     @reply = Reply.new(reply_params)
     @reply.author_id = current_user.id
-    @reply.save
-    flash[:errors] = @reply.errors.full_messages
-    post_id = params[:reply][:post_id]
-    redirect_to post_url(post_id)
+
+    if @reply.save
+      render json: @reply
+    else
+      render json: @reply.errors.full_messages, status: :unprocessable_entity
+    end
   end
 
   def destroy
     @reply = Reply.find(params[:id])
     @reply.destroy
-    redirect_to post_url(@reply.post_id)
-  end
-
-  def new
+    render json: { message: 'deleted' }
   end
 
   private
