@@ -3,11 +3,10 @@ window.Yeehaw = {
   Collections: {},
   Views: {},
   Routers: {},
-  initialize: function() {
-    alert('Hello from Backbone!');
+  initialize: function () {
+    new Yeehaw.Routers.Router({
+      $rootEl: $("#main")
+    });
+    Backbone.history.start();
   }
 };
-
-$(document).ready(function(){
-  Yeehaw.initialize();
-});
