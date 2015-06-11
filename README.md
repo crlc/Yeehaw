@@ -11,13 +11,12 @@ Yeehaw is a clone of Yik Yak built on Rails and Backbone. Users can:
 
 - [x] Create accounts
 - [x] Create sessions (log in)
-- [x] Create groups
 - [x] Create posts
-- [x] Create post replies
-- [x] View posts and replies
-- [ ] Subscribe to groups
-- [ ] Leave groups
-- [ ] View a feed of subscribed groups
+- [ ] Create post replies
+- [ ] View posts and replies
+- [ ] Subscribe to a group
+- [ ] Leave group
+- [ ] View a feed of subscribed and `nearby` groups
 - [ ] Search for groups by name
 
 ## Design Docs
@@ -29,8 +28,8 @@ Yeehaw is a clone of Yik Yak built on Rails and Backbone. Users can:
 
 ## Implementation Timeline
 
-### Phase 1: User Authentication, Groups and Posts Creation (~1 day)
-I will implement user authentication in Rails. Users will be able to create groups and posts using a simple text form in a Rails view. At the end of this phase the app will be pushed to Heroku.
+### Phase 1: User Authentication, Groups, Posts, and Replies Creation (~1 day)
+I will implement user authentication in Rails. Users will be able to create groups, posts, and replies using a simple text form in a Rails view. At the end of this phase the app will be pushed to Heroku.
 
 [Details][phase-one]
 
@@ -59,6 +58,7 @@ I'll need to add `search` routes to both the Groups and Posts controllers. On th
 - [ ] Pagination/infinite scroll
 - [ ] Typeahead search bar
 - [ ] "Upvote/downvote" buttons for posts and replies
+- [ ] Sort posts by new or popularity
 - [ ] User karma
 - [ ] View posts from other groups
 - [ ] Post types (image posts, etc)
