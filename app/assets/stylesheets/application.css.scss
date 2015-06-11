@@ -12,5 +12,92 @@
 // *= require_tree .
 // *= require_self
 
+
 @import 'bootstrap-sprockets';
 @import 'bootstrap';
+
+$bg-default: #57e2ca;
+$bg-highlight: #0dd5b2;
+$col-default: #fff;
+$col-highlight: #000;
+
+.navbar-center {
+  left: 45%;
+  margin: auto;
+  position: absolute;
+  text-align: center;
+  width: 100%;
+}
+
+.navbar-default {
+  background-color: $bg-default;
+  border-color: $bg-highlight;
+
+  .navbar-brand {
+    color: $col-default;
+
+    &:hover, &:focus {
+      color: $col-highlight; }}
+
+  .navbar-text {
+    color: $col-default; }
+
+  .navbar-nav {
+    > li {
+      > a {
+        color: $col-default;
+
+        &:hover,
+        &:focus {
+          color: $col-highlight; }}}
+
+    > .active {
+      > a,
+      > a:hover,
+      > a:focus {
+        background-color: $bg-highlight;
+        color: $col-highlight; }}
+
+    > .open {
+      > a,
+      > a:hover,
+      > a:focus {
+        background-color: $bg-highlight;
+        color: $col-highlight; }}}
+
+  .navbar-toggle {
+    border-color: $bg-highlight;
+
+    &:hover,
+    &:focus {
+      background-color: $bg-highlight; }
+
+    .icon-bar {
+      background-color: $col-default; }}
+
+  .navbar-collapse,
+  .navbar-form {
+    border-color: $col-default;}
+
+  .navbar-link {
+    color: $col-default;
+
+    &:hover {
+      color: $col-highlight; }}}
+
+@media (max-width: 767px) {
+  .navbar-default .navbar-nav .open .dropdown-menu {
+    > li > a {
+      color: $col-default;
+
+      &:hover,
+      &:focus {
+        color: $col-highlight; }}
+
+    > .active {
+      > a,
+      > a:hover,
+      > a:focus, {
+        background-color: $bg-highlight;
+        color: $col-highlight; }}}
+}
