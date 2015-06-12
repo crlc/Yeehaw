@@ -24,7 +24,7 @@ class Api::GroupsController < ApplicationController
     @group = Group.includes(:users, posts: :replies).find(params[:id])
 
     if @group.member?(current_user)
-      render json: @group
+      render 'show'
     else
       render json: ["Can't view these posts"], status: :unprocessable_entity
     end

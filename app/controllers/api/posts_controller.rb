@@ -16,14 +16,9 @@ class Api::PostsController < ApplicationController
     render json: { message: 'deleted' }
   end
 
-  def index
-    @posts = current_user.groups.first.posts
-    render json: @posts
-  end
-
   def show
     @post = Post.find(params[:id])
-    render json: @post
+    render 'show'
   end
 
   private
