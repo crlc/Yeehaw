@@ -29,6 +29,11 @@ $col-highlight: #000;
   width: 100%;
 }
 
+footer,
+header {
+  color: $bg-highlight;
+}
+
 .navbar-default {
   background-color: $bg-default;
   border-color: $bg-highlight;
