@@ -2,6 +2,14 @@ Yeehaw.Collections.Posts = Backbone.Collection.extend({
   model: Yeehaw.Models.Post,
   url: '/api/posts',
 
+  comparator: function (post) {
+    return -(new Date(post.get('created_at')));
+  },
+
+  initialize: function (models, options) {
+    this.group = options.group;
+  },
+
   getOrFetch: function (id) {
     var post = this.get(id);
     var posts = this;
@@ -19,5 +27,3 @@ Yeehaw.Collections.Posts = Backbone.Collection.extend({
     return post;
   }
 });
-
-Yeehaw.Collections.posts = new Yeehaw.Collections.Posts();
