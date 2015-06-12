@@ -5,26 +5,18 @@ Yeehaw.Views.PostShow = Backbone.CompositeView.extend({
     'click .del': 'destroyPost',
   },
 
+  className: 'post-display',
+
   initialize: function () {
+    this.collection = this.model.replies();
     this.listenTo(this.model, 'sync', this.render);
-    this.listenTo(this.model.replies(), 'add', this.addReply);
-
-    var newReply = new Yeehaw.Models.Reply({
-      post_id: this.model.id
-    });
-    var formView = new Yeehaw.Views.ReplyForm({
-      model: newReply,
-      collection: this.model.replies()
-    });
-
-    this.addSubview('.replies-new', formView);
-    this.model.replies().each( this.addReply.bind(this) );
+    this.listenTo(this.collection, 'add', this.addReply);
   },
 
   addReply: function (reply) {
     var repliesShow = new Yeehaw.Views.ReplyShow({
-      collection: this.model.replies(),
-      model: reply
+      model: reply,
+      collection: this.collection
     });
     this.addSubview('.replies-div', repliesShow);
   },
@@ -36,7 +28,7 @@ Yeehaw.Views.PostShow = Backbone.CompositeView.extend({
         Backbone.history.navigate('', { trigger: true });
       }
     });
-    this.remove();// hmmmm
+    this.remove();
   },
 
   removeReply: function (reply) {
@@ -51,11 +43,25 @@ Yeehaw.Views.PostShow = Backbone.CompositeView.extend({
 
   render: function () {
     var renderedContent = this.template({
-      post: this.model,
-      // replies: this.model.replies()
+      post: this.model
     });
     this.$el.html(renderedContent);
-    this.attachSubviews();
+    this.renderReply();
+    this.renderReplyForm();
     return this;
+  },
+
+  renderReply: function () {
+    this.model.replies().each( this.addReply.bind(this) );
+  },
+
+  renderReplyForm: function () {
+    var newReply = new Yeehaw.Models.Reply({ post_id: this.model.id });
+    var formView = new Yeehaw.Views.ReplyForm({
+      model: newReply,
+      collection: this.collection
+    });
+
+    this.addSubview('.replies-new', formView);
   }
 });

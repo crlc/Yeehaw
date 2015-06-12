@@ -1,6 +1,6 @@
 Yeehaw.Views.PostsIndexItem = Backbone.View.extend({
   template: JST['posts/index_item'],
-  tagName: 'li',
+  tagName: 'blockquote',
 
   initialize: function () {
     this.listenTo(this.model, 'add sync remove reset', this.render);

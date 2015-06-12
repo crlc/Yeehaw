@@ -4,22 +4,22 @@ Yeehaw.Routers.Router = Backbone.Router.extend({
   },
 
   routes: {
-    '': 'postsIndex',
+    '': 'showGroup',
     'posts/new': 'newPost',
     'posts/:id': 'showPost',
     'groups/:id': 'showGroup'
   },
 
-  postsIndex: function () {
-    Yeehaw.Collections.posts.fetch();
-
-    var indexView = new Yeehaw.Views.PostsIndex({
-      collection: Yeehaw.Collections.posts
-    });
-
-    this._swapView(indexView);
-  },
-
+  // postsIndex: function () {
+  //   Yeehaw.Collections.posts.fetch();
+  //
+  //   var indexView = new Yeehaw.Views.PostsIndex({
+  //     collection: Yeehaw.Collections.posts
+  //   });
+  //
+  //   this._swapView(indexView);
+  // },
+  
   newPost: function () {
     Yeehaw.Collections.groups.fetch({
       success: function () {
@@ -45,8 +45,10 @@ Yeehaw.Routers.Router = Backbone.Router.extend({
   },
 
   showGroup: function (id) {
+    if (!id) {
+      id = 1;
+    }
     Yeehaw.Collections.posts.fetch();
-
     var group = Yeehaw.Collections.groups.getOrFetch(id);
     var formView = new Yeehaw.Views.GroupShow({
       model: group,

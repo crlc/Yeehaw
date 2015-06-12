@@ -1,6 +1,14 @@
 Yeehaw.Models.Group = Backbone.Model.extend({
   urlRoot: '/api/groups',
 
+  posts: function () {
+    if (!this._posts) {
+      this._posts = new Yeehaw.Collections.Posts([], { group: this });
+    }
+
+    return this._posts;
+  },
+
   following: function () {
     if (!this._following) {
       this._following = new Yeehaw.Models.Following({ group_id: this.id });
@@ -29,10 +37,11 @@ Yeehaw.Models.Group = Backbone.Model.extend({
   },
 
   parse: function (response) {
-    if (response.group_id) {
-      this.following().set({ id: response.following_id });
-      delete response.group_id;
+    if (response.posts) {
+      this.posts().set(response.posts, { parse: true });
+      delete response.posts;
     }
+
     return response;
   }
 });

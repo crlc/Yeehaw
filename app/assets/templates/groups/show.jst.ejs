@@ -1,6 +1,9 @@
-<h2><%= group.escape("title") %></h2>
 <ul class="posts">
   <% posts.each(function (post) { %>
-    <li><a href="#/posts/<%= post.get('id') %>"><%= post.escape("body") %></a></li>
+    <blockquote>
+      <header><strong><%= post.escape("handle") %></strong></header>
+      <p><a href="#/posts/<%= post.get('id') %>"><%= post.escape("body") %></a></p>
+      <footer><%= post.get("created_at") %> <%= post.replies().length %> replies</footer>
+    </blockquote>
   <% }); %>
 </ul>

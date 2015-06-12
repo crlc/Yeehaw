@@ -1,6 +1,6 @@
 class Api::PostsController < ApplicationController
   def create
-    @post = Post.new(post_params)
+    @post = current_group.posts.new(post_params)
     @post.author_id = current_user.id
 
     if @post.save
@@ -17,7 +17,7 @@ class Api::PostsController < ApplicationController
   end
 
   def index
-    @posts = Post.all
+    @posts = current_user.groups.first.posts
     render json: @posts
   end
 

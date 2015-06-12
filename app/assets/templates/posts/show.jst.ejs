@@ -1,5 +1,8 @@
-<h4><%= post.escape("handle") %></h4>
-<h4><%= post.escape("body") %></h4>
+<blockquote>
+  <header><strong><%= post.escape("handle") %></strong></header>
+  <p><%= post.escape("body") %></a></p>
+  <footer><%= post.get("created_at") %></footer>
+</blockquote>
 
 <div class="replies-new"></div>
 <div class="replies-div"></div>

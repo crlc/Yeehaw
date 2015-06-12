@@ -1,2 +1,3 @@
-<h4><a href="#/posts/<%= post.get('id') %>"><%= post.escape("handle") %></a></h4>
-<h5><a href="#/posts/<%= post.get('id') %>"><%= post.escape("body") %></a></h5>
+<header><strong><%= post.escape("handle") %></strong></header>
+<p><a href="#/posts/<%= post.get('id') %>"><%= post.escape("body") %></a></p>
+<footer><%= post.get("created_at") %></footer>
