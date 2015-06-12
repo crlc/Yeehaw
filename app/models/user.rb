@@ -5,8 +5,8 @@ class User < ActiveRecord::Base
 
   after_initialize :ensure_session_token
 
-  has_many :posts, dependent: :destroy
-  has_many :replies, dependent: :destroy
+  has_many :posts, foreign_key: :author_id, dependent: :destroy
+  has_many :replies, foreign_key: :author_id, dependent: :destroy
   has_many :followings, foreign_key: :follower_id
   has_many :groups, through: :followings
 
