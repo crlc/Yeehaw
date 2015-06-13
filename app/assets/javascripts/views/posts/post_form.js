@@ -1,8 +1,10 @@
 Yeehaw.Views.PostForm = Backbone.View.extend({
-  tagName: 'form',
   template: JST['posts/form'],
+
   events: {
-    'click button': 'submit'
+    'click .close': 'remove',
+    'click .m-backdrop': 'remove',
+    'submit form': 'createPost'
   },
 
   initialize: function (options) {
@@ -10,25 +12,21 @@ Yeehaw.Views.PostForm = Backbone.View.extend({
     this.listenTo(this.model, 'sync', this.render);
   },
 
-  submit: function (event) {
-    event.preventDefault();
-    var attrs = this.$el.serializeJSON();
-    var that = this;
-
-    this.model.set(attrs);
+  createPost: function (e) {
+    e.preventDefault();
+    this.model.set('body', this.$('textarea').val());
+    this.model.set('handle', this.$('input').val());
+    this.model.set('group_id', 1);
     this.model.save({}, {
       success: function () {
-        that.collection.add(that.model, { merge: true });
-        Backbone.history.navigate('/', { trigger: true });
-      },
+        this.collection.add(this.model);
+        this.remove();
+      }.bind(this)
     });
   },
 
   render: function () {
-    var renderedContent = this.template({
-      post: this.model,
-      groups: this.groups
-    });
+    var renderedContent = this.template();
     this.$el.html(renderedContent);
     return this;
   }
