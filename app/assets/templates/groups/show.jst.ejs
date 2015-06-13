@@ -1,9 +1,5 @@
+<button class="btn-compose btn btn-success btn-small">
+  Compose Post
+</button>
 <ul class="posts">
-  <% posts.each(function (post) { %>
-    <blockquote>
-      <header><strong><%= post.escape("handle") %></strong></header>
-      <p><a href="#/posts/<%= post.get('id') %>"><%= post.escape("body") %></a></p>
-      <footer><%= post.get("created_at") %> <%= post.replies().length %> replies</footer>
-    </blockquote>
-  <% }); %>
 </ul>

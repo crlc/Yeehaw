@@ -1,37 +1,10 @@
-<div class="content-post-form">
-
+<div class="m-backdrop"></div>
+<div class="m-content">
+  <button class="close">&times;</button>
+  <h3>New Post</h3>
   <form>
-    <input type="hidden" name="post[group_id]" value=1>
-    <div class="spacer">
-      <div class="roundfield">
-        <span class="p-title">handle</span>
-        <div class="roundfield-content">
-          <input class="inp" type="text" name="post[handle]" id="post_title" value="<%= post.escape('handle') %>">
-        </div>
-      </div>
-    </div>
-
-    <div class="spacer">
-      <div class="roundfield">
-        <span class="p-title">body</span>
-        <div class="roundfield-content">
-          <textarea class="inp" name="post[body]" id="post_content" value="<%= post.escape('body') %>"></textarea>
-        </div>
-      </div>
-    </div>
-
-    <!-- <div class="spacer">
-      <div class="roundfield">
-        <span class="p-title">choose a group</span>
-        <div class="roundfield-content">
-          <% groups.each(function (group) { %>
-            <input class="c-box" type="checkbox" name="post[group_id]" id="group_id" value="<%= group.get('id') %>">
-              <%= group.escape('handle') %>
-            </input>
-          <% }); %>
-        </div>
-      </div>
-    </div> -->
-
-  <button class="post-button pulse">submit</button>
+    <textarea class="form-control" name="body"></textarea>
+    <input type="text" name="handle" placeholder="Add A Handle">
+    <button class="btn btn-primary">Send!</button>
+  </form>
 </div>

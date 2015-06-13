@@ -1,38 +1,38 @@
-Yeehaw.Views.GroupShow = Backbone.View.extend({
+Yeehaw.Views.GroupShow = Backbone.CompositeView.extend({
   template: JST['groups/show'],
 
-  initialize: function () {
-    // this.collection = this.model.posts();
-    this.listenTo(this.model, 'sync', this.render);
-    // this.listenTo(this.collection, 'add', this.addPost);
+  events: {
+    'click .btn-compose': 'openPostForm'
   },
-  //
-  // addPost: function (post) {
-  //   var view = new Yeehaw.Views.PostShow({
-  //     model: post
-  //   });
-  //   this.addSubview('#posts', view);
-  // },
+
+  initialize: function () {
+    this.collection = this.model.posts();
+    this.listenTo(this.model, 'sync', this.render);
+    this.listenTo(this.collection, 'add', this.addPost);
+    this.listenTo(this.collection, 'add', this.render);
+  },
+
+  addPost: function (post) {
+    var view = new Yeehaw.Views.PostShow({
+      model: post
+    });
+    this.addSubview('.posts', view);
+  },
+
+  openPostForm: function () {
+    var modal = new Yeehaw.Views.PostForm({
+      model: new Yeehaw.Models.Post(),
+      collection: this.collection
+    });
+    $('body').prepend(modal.render().$el);
+  },
 
   render: function () {
     var renderedContent = this.template({
-      group: this.model,
-      posts: this.collection
+      group: this.model
     });
     this.$el.html(renderedContent);
-    // this.renderPosts();
+    this.collection.each( this.addPost.bind(this) );
     return this;
-  },
-  //
-  // renderPosts: function () {
-  //   this.model.posts().each( this.addPost.bind(this) );
-  // },
-  //
-  // renderPostForm: function () {
-  //   var view = new Yeehaw.Views.PostForm({
-  //     collection: this.collection
-  //   });
-  //
-  //   this.addSubview('#post-form', view);
-  // }
+  }
 });

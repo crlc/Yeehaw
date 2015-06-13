@@ -1,8 +1,6 @@
 <blockquote>
-  <header><strong><%= post.escape("handle") %></strong></header>
-  <p><%= post.escape("body") %></a></p>
-  <footer><%= post.get("created_at") %></footer>
+  <header><strong><%= post.get("handle") %></strong></header>
+  <p><%= post.escape("body") %></p>
+  <footer><span class="glyphicon glyphicon-time"></span> <%= post.get("time_ago")%> ago <%= post.get("reply_count") %> replies</footer>
+  <button class="del" name="destroy">Delete</button>
 </blockquote>
-
-<div class="replies-new"></div>
-<div class="replies-div"></div>
