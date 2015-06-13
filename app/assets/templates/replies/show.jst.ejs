@@ -1,10 +1,10 @@
 <li style="list-style:none">
 
-  <div class="reply-body"><%= reply.escape("body")%></div>
-  <div class="infoline">by <a href=""><%= reply.get("author_id") %></a>
-    about <%= reply.get("time_ago")%> ago</div>
+  <div class="reply-body"><%= reply.get('author_id') %><%= reply.escape('body')%></div>
+  <div class="infoline">
+    <span class="glyphicon glyphicon-time"></span><%= reply.get('time_ago')%> ago</div>
+      <button class="del">&times;</button>
     <% if (reply.escape('author_id') === 1) { %>
-      <div class="destroy-reply">delete</div>
     <% }; %>
   <br>
 

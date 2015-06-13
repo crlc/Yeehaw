@@ -1,6 +1,7 @@
 Yeehaw.Views.ReplyForm = Backbone.View.extend({
   template: JST['replies/form'],
   tagName: 'form',
+
   events:{
     'click .save_reply': 'submit',
     'mousedown .new_reply': 'clearTextArea',
@@ -21,24 +22,25 @@ Yeehaw.Views.ReplyForm = Backbone.View.extend({
       reply: this.model
     });
     this.$el.html(renderedContent);
+    this.renderPreview(this.$('textarea'));
     return this;
   },
 
-  renderPreview: function (event) {
-    var content = $(event.currentTarget).val();
-    this.$('.preview').html(_.escape(content));
+  renderPreview: function () {
+    var count = 200 - this.$('textarea').val().length;
+    this.$('.preview').html(_.escape(count));
   },
 
   submit: function (event) {
     event.preventDefault();
-    var attrs = this.$el.serializeJSON();
-    var that = this;
+    this.model.set('body', this.$('textarea').val());
+    this.model.set('group_id', 1);
+    this.model.set('post_id', 1);
 
-    this.model.set(attrs);
     this.model.save({}, {
       success: function () {
-        that.collection.add(that.model, { merge: true });
-      }
+        this.collection.add(this.model);
+      }.bind(this)
     });
   }
 });
