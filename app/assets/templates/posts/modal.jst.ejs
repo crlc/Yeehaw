@@ -1,0 +1,15 @@
+<div class="m-backdrop"></div>
+
+<div class="m-content">
+  <button class="close">&times;</button>
+  <blockquote>
+    <header><strong><%= post.get("handle") %></strong></header>
+    <p><%= post.escape("body") %></p>
+    <footer><span class="glyphicon glyphicon-time"></span> <%= post.get("time_ago")%> ago <%= post.get("reply_count") %> replies</footer>
+    <% if (post.get("author_id") === 1) { %>
+      <button class="del">&times;</button>
+    <% } %>
+  </blockquote>
+
+  <div class="post-modal-replies"></div>
+</div>
