@@ -1,0 +1,9 @@
+<p><a href="#/groups/<%= group.get('id') %>"><%= group.get("title") %></a>
+
+  <% if (group.escape('member?') == 'true') { %>
+    <span class="glyphicon glyphicon-check"></div>
+  <% } else { %>
+    <span class="glyphicon glyphicon-unchecked"></div>
+  <% }; %>
+
+</p>
