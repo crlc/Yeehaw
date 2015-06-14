@@ -1,4 +1,5 @@
 json.extract! @group, :id, :title, :created_at, :updated_at
+json.member? @group.member?(current_user)
 
 json.posts @group.posts do |post|
   json.extract! post, :id, :handle, :body, :created_at, :updated_at

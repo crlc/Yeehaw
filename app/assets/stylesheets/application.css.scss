@@ -24,13 +24,13 @@ $col-highlight: #000;
 .m-content {
   background-color: white;
   border-radius: 3px;
-  height: 256px;
+  height: auto;
   left: 25%;
-  margin-top: 66px;
+  margin-top: auto;
   padding: 20px;
   position: fixed;
   // /* margin: 0 auto; */
-  width: 564px;
+  width: 600px;
   z-index: 101;
 }
 
@@ -38,7 +38,7 @@ $col-highlight: #000;
   background-color: rgba(170, 169, 176, .5);
   bottom: 0;
   left: 0;
-  position: absolute;
+  position: fixed;
   right: 0;
   top: 0;
   z-index: 68;
@@ -53,11 +53,17 @@ header {
   color: $bg-highlight;
 }
 
+.posts {
+  margin-left: 10%;
+  margin-right: 20%;
+}
+
 blockquote {
   background-color: #fff;
-  margin-left: 10%;
-  min-width: 500px;
-  margin-right: 10%;
+  border-bottom: 2px solid #eee;
+  border-radius: 3px;
+  margin: auto;
+  min-width: 450px;
 }
 
 body { padding-top: 70px; }

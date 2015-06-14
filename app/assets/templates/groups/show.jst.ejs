@@ -1,5 +1,7 @@
-<button class="btn-compose btn btn-success btn-small">
-  Compose Post
-</button>
+<% if (group.get("member?")) { %>
+  <button class="btn-compose btn btn-success btn-small">
+    Compose Post
+  </button>
+<% }; %>
 <ul class="posts">
 </ul>
