@@ -1,0 +1,9 @@
+<div class='groups-index-title'>
+  <h3>Peek</h3>
+</div>
+<ul>
+<% groups.each(function (group) { %>
+  <li><a href="#/groups/<%= group.get('id') %>"><%= group.get("title") %></a></li>
+<% }) %>
+
+</ul>

@@ -16,18 +16,13 @@ class Api::GroupsController < ApplicationController
   end
 
   def index
-    @groups = current_user.groups
+    @groups = Group.all
     render json: @groups
   end
 
   def show
     @group = Group.includes(:users, posts: :replies).find(params[:id])
-
-    if @group.member?(current_user)
-      render 'show'
-    else
-      render json: ["Can't view these posts"], status: :unprocessable_entity
-    end
+    render 'show'
   end
 
   private
