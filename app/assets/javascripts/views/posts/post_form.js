@@ -16,7 +16,7 @@ Yeehaw.Views.PostForm = Backbone.View.extend({
     e.preventDefault();
     this.model.set('body', this.$('textarea').val());
     this.model.set('handle', this.$('input').val());
-    this.model.set('group_id', 1);
+    this.model.set('group_id', this.collection.group.id);
     this.model.save({}, {
       success: function () {
         this.collection.add(this.model);

@@ -34,8 +34,8 @@ Yeehaw.Views.ReplyForm = Backbone.View.extend({
   submit: function (event) {
     event.preventDefault();
     this.model.set('body', this.$('textarea').val());
-    this.model.set('group_id', 1);
-    this.model.set('post_id', 1);
+    this.model.set('group_id', this.collection.post.get("group_id"));
+    this.model.set('post_id', this.collection.post.id);
 
     this.model.save({}, {
       success: function () {
