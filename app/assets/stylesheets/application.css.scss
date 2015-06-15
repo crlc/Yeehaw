@@ -44,6 +44,11 @@ $col-highlight: #000;
   z-index: 68;
 }
 
+.bar {
+  padding-top: 10px;
+  float: none;
+}
+
 body {
   background-image: url(http://www.yikyakapp.com/wp-content/themes/yik-yak-web-general/img/home/map.png);
 }
@@ -53,9 +58,11 @@ header {
   color: $bg-highlight;
 }
 
-.posts {
-  margin-left: 10%;
+.posts,
+.bar {
+  margin-left: 20%;
   margin-right: 20%;
+  padding: 0px;
 }
 
 blockquote {
@@ -66,7 +73,7 @@ blockquote {
   min-width: 450px;
 }
 
-body { padding-top: 70px; }
+body { padding-top: 50px; }
 
 .navbar-default {
   background-color: $bg-default;

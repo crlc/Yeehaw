@@ -16,7 +16,7 @@ Yeehaw is a clone of Yik Yak built on Rails and Backbone. Users can:
 - [x] View posts and replies
 - [x] Subscribe to a single group
 - [x] Leave group
-- [ ] View a feed of subscribed or `nearby` groups
+- [x] View a feed of subscribed or `nearby` groups
 - [ ] Search for groups by name
 
 ## Design Docs
