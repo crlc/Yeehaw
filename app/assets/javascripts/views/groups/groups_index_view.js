@@ -12,9 +12,13 @@ Yeehaw.Views.GroupsIndexView = Backbone.View.extend({
 
   follow: function (event) {
     event.preventDefault();
-    // this.model.collection.each(this.unfollow());
+    this.model.collection.each(function (model) {
+      if (model.get("id") !== 1) {
+        model.unfollow();
+      }
+    }.bind(this));
     this.model.follow();
-    // $(".glyphicon-check").removeClass('glyphicon-check').addClass('glyphicon-unchecked');
+    $(".glyphicon-check").slice(1).removeClass('glyphicon-check').addClass('glyphicon-unchecked');
     this.$(".glyphicon-unchecked").removeClass('glyphicon-unchecked').addClass('glyphicon-check');
   },
 

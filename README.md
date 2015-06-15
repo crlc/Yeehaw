@@ -14,9 +14,9 @@ Yeehaw is a clone of Yik Yak built on Rails and Backbone. Users can:
 - [x] Create posts
 - [x] Create post replies
 - [x] View posts and replies
-- [x] Subscribe to a group
+- [x] Subscribe to a single group
 - [x] Leave group
-- [ ] View a feed of subscribed and `nearby` groups
+- [ ] View a feed of subscribed or `nearby` groups
 - [ ] Search for groups by name
 
 ## Design Docs
@@ -29,17 +29,17 @@ Yeehaw is a clone of Yik Yak built on Rails and Backbone. Users can:
 ## Implementation Timeline
 
 ### Phase 1: User Authentication, Groups, Posts, and Replies Creation (~1 day)
-I will implement user authentication in Rails. Users will be able to create groups, posts, and replies using a simple text form in a Rails view. At the end of this phase the app will be pushed to Heroku.
+I will implement user authentication in Rails. Users will be able to create posts and replies using a simple text form in a Rails view. At the end of this phase the app will be pushed to Heroku.
 
 [Details][phase-one]
 
 ### Phase 2: Viewing Groups and Posts (~2 days)
-I will add API routes to serve group and post data as JSON, then add Backbone models and collections that fetch data from those routes. Users will be able to create posts and view both groups and posts, inside a single Backbone app.
+I will add API routes to serve group and post data as JSON, then add Backbone models and collections that fetch data from those routes. Users will be able to create posts/replies and view both groups and posts, inside a single Backbone app.
 
 [Details][phase-two]
 
 ### Phase 3: Editing Posts and Groups (~2 days)
-I'll add functionality to the `PostForm` and `PostShow` to edit posts. I will also add the ability to join or leave a group.
+I'll add functionality to the `PostForm` and `PostShow` to edit posts within a minute of creating them. I will also add the ability to join or leave a group.
 
 [Details][phase-three]
 
@@ -60,6 +60,7 @@ I'll need to add `search` routes to both the Groups and Posts controllers. On th
 - [ ] "Upvote/downvote" buttons for posts and replies
 - [ ] Sort posts by new or popularity
 - [ ] User karma
+- [ ] Avatars for conversations
 - [x] View posts from other groups
 - [ ] Post types (image posts, etc)
 - [ ] Sharing posts

@@ -17,7 +17,11 @@ Yeehaw.Models.Group = Backbone.Model.extend({
 
   follow: function () {
     var that = this;
-    this.following().save({ group_id: this.id });
+    this.following().save({ group_id: this.id }, {
+      success: function (model, response, options) {
+        that._following = model;
+      }
+    });
   },
 
   unfollow: function () {
