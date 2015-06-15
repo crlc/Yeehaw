@@ -1,14 +1,42 @@
-<h1>Login</h1>
+<div class="wrapper">
+<div class="container">
 <form action="<%= session_url %>" method="post">
   <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
 
-  <label>Username
-    <input type="text" name="user[username]" value="">
-  </label><br>
+  <input type="text" name="user[username]" value="" placeholder="Username">
 
-  <label>Password
-    <input type="password" name="user[password]" value="">
-  </label>
+  <input type="password" name="user[password]" value="" placeholder="Password">
 
-  <input type="submit" value="Login">
+  <button type="submit" id="login-button">Login</button>
 </form>
+<form action="<%= session_url %>" method="post">
+  <button type="submit" id="login-button">Guest Login</button>
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+
+  <input type="hidden" name="user[username]" value="guest">
+
+  <input type="hidden" name="user[password]" value="password">
+
+</form>
+</div>
+
+<ul class="bg-bubbles">
+<li><img src="<%= asset_path( 'reply_icons/reply-icons_13.png' ) %>" style="height: 70%; width:70%; opacity: .5" /></li>
+<li><img src="<%= asset_path( 'reply_icons/reply-icons_15.png' ) %>" style="height: 70%; width:70%; opacity: .5" /></li>
+<li><img src="<%= asset_path( 'reply_icons/reply-icons_33.png' ) %>" style="height: 70%; width:70%; opacity: .5" /></li>
+<li><img src="<%= asset_path( 'reply_icons/reply-icons_25.png' ) %>" style="height: 70%; width:70%; opacity: .5" /></li>
+<li><img src="<%= asset_path( 'reply_icons/reply-icons_35.png' ) %>" style="height: 70%; width:70%; opacity: .5" /></li>
+<li><img src="<%= asset_path( 'reply_icons/reply-icons_36.png' ) %>" style="height: 70%; width:70%; opacity: .5" /></li>
+<li><img src="<%= asset_path( 'reply_icons/reply-icons_42.png' ) %>" style="height: 70%; width:70%; opacity: .5" /></li>
+<li><img src="<%= asset_path( 'reply_icons/reply-icons_43.png' ) %>" style="height: 70%; width:70%; opacity: .5" /></li>
+<li><img src="<%= asset_path( 'reply_icons/reply-icons_44.png' ) %>" style="height: 70%; width:70%; opacity: .5" /></li>
+<li><img src="<%= asset_path( 'reply_icons/reply-icons_45.png' ) %>" style="height: 70%; width:70%; opacity: .5" /></li>
+<li><img src="<%= asset_path( 'reply_icons/reply-icons_46.png' ) %>" style="height: 70%; width:70%; opacity: .5" /></li>
+</ul>
+</div>
+<script>
+  $("#login-button").click(function(event){
+  	$('form').fadeOut(500);
+  	$('.wrapper').addClass('form-success');
+  });
+</script>
