@@ -6,7 +6,9 @@
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
   <script type="text/javascript" charset="utf-8">
-    window.CURRENT_USER_ID = <%= current_user.id %>;
+    window.CURRENT_USER_ID = <% if (current_user) %>
+    <%= current_user.id %>;
+    <% end %>
   </script>
 </head>
 <body>
