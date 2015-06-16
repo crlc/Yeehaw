@@ -51,6 +51,10 @@ $col-highlight: #000;
   float: none;
 }
 
+.nav-tabs > li > a:hover.btn {
+  background-color: #286090;
+}
+
 body {
   background-image: url(http://www.yikyakapp.com/wp-content/themes/yik-yak-web-general/img/home/map.png);
 }
