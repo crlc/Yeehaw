@@ -46,6 +46,11 @@ $col-highlight: #000;
   z-index: 68;
 }
 
+form > textarea::-webkit-input-placeholder {
+  /* WebKit browsers */
+  color: #ccc;
+}
+
 .bar {
   padding-top: 10px;
   float: none;
