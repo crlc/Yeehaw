@@ -3,9 +3,9 @@ Yeehaw.Views.ReplyForm = Backbone.View.extend({
   tagName: 'form',
 
   events:{
-    'click .save_reply': 'submit',
     'mousedown .new_reply': 'clearTextArea',
-    'keyup textarea': 'renderPreview'
+    'keyup textarea': 'renderPreview',
+    'click button': 'createReply'
   },
 
   initialize: function () {
@@ -31,7 +31,7 @@ Yeehaw.Views.ReplyForm = Backbone.View.extend({
     this.$('.preview').html(_.escape(count));
   },
 
-  submit: function (event) {
+  createReply: function (event) {
     event.preventDefault();
     this.model.set('body', this.$('textarea').val());
     this.model.set('group_id', this.collection.post.get("group_id"));

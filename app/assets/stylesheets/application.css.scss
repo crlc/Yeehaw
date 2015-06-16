@@ -28,7 +28,9 @@ $col-highlight: #000;
   left: 25%;
   margin-top: auto;
   padding: 20px;
-  position: fixed;
+  position:fixed;
+  max-height: 80%;
+  overflow-y: scroll;
   // /* margin: 0 auto; */
   width: 600px;
   z-index: 101;

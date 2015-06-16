@@ -4,7 +4,7 @@ Yeehaw.Views.PostForm = Backbone.View.extend({
   events: {
     'click .close': 'remove',
     'click .m-backdrop': 'remove',
-    'submit form': 'createPost'
+    'click button': 'createPost'
   },
 
   initialize: function (options) {
@@ -14,8 +14,8 @@ Yeehaw.Views.PostForm = Backbone.View.extend({
 
   createPost: function (e) {
     e.preventDefault();
-    this.model.set('body', this.$('textarea').val());
-    this.model.set('handle', this.$('input').val());
+    var attrs = this.$('form').serializeJSON();
+    this.model.set(attrs);
     this.model.set('group_id', this.collection.group.id);
     this.model.save({}, {
       success: function () {
