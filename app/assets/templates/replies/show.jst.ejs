@@ -1,11 +1,7 @@
-<li style="list-style:none">
-
   <div class="reply-body"><%= reply.get('author_id') %><%= reply.escape('body')%></div>
   <div class="infoline">
-    <span class="glyphicon glyphicon-time"></span> <%= reply.get('time_ago')%> ago</div>
+    <span class="glyphicon glyphicon-time"></span> <%= reply.get('time_ago') || "less than a minute" %> ago</div>
     <% if (reply.get('author_id') === CURRENT_USER_ID) { %>
       <button class="del">&times;</button>
     <% }; %>
   <br>
-
-</li>

@@ -18,9 +18,7 @@ Yeehaw.Views.ReplyForm = Backbone.View.extend({
   },
 
   render: function () {
-    var renderedContent = this.template({
-      reply: this.model
-    });
+    var renderedContent = this.template();
     this.$el.html(renderedContent);
     this.renderPreview(this.$('textarea'));
     return this;
@@ -33,14 +31,13 @@ Yeehaw.Views.ReplyForm = Backbone.View.extend({
 
   createReply: function (event) {
     event.preventDefault();
-    this.model.set('body', this.$('textarea').val());
-    this.model.set('group_id', this.collection.post.get("group_id"));
-    this.model.set('post_id', this.collection.post.id);
+    var params = {
+      body: this.$('textarea').val(),
+      group_id: this.collection.post.get("group_id"),
+      post_id: this.collection.post.id
+    };
 
-    this.model.save({}, {
-      success: function () {
-        this.collection.add(this.model);
-      }.bind(this)
-    });
+    this.collection.create(params, { wait: true });
+    this.render();
   }
 });

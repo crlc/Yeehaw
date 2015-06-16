@@ -5,7 +5,7 @@
   <blockquote>
     <header><strong><%= post.get("handle") %></strong></header>
     <p><%= post.escape("body") %></p>
-    <footer><span class="glyphicon glyphicon-time"></span> <%= post.get("time_ago")%> ago <%= post.get("reply_count") %> replies</footer>
+    <footer><span class="glyphicon glyphicon-time"></span> <%= post.get("time_ago")%> ago</footer>
     <% if (post.get("author_id") === CURRENT_USER_ID) { %>
       <button class="del">&times;</button>
     <% } %>

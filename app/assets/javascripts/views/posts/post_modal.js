@@ -26,6 +26,7 @@ Yeehaw.Views.PostModal = Backbone.CompositeView.extend({
   dismiss: function (event) {
     event.preventDefault();
     this.remove();
+    Backbone.history.loadUrl();
   },
 
   render: function () {
