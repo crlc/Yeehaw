@@ -1,5 +1,5 @@
 <blockquote>
-  <header><strong><%= post.get("handle") %></strong></header>
-  <p><%= post.escape("body") %></p>
-  <footer><span class="glyphicon glyphicon-time"></span> <%= post.get("time_ago") || "less than a minute" %> ago <%= post.get("reply_count") || "0" %> replies</footer>
+<header><strong><%= post.get("handle") %></strong></header>
+<p><%= post.escape("body") %></p>
+<footer><span class="glyphicon glyphicon-time"></span> <%= post.get("time_ago") || "less than a minute" %> ago <%= post.get("reply_count") || "0" %> replies</footer>
 </blockquote>

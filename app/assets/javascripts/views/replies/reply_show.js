@@ -1,6 +1,6 @@
 Yeehaw.Views.ReplyShow = Backbone.View.extend({
   template: JST['replies/show'],
-  tagName: 'li',
+  tagName: 'blockquote',
 
   events:{
     'click .del': 'destroyReply',

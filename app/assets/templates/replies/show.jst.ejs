@@ -1,7 +1,14 @@
-  <div class="reply-body"><%= reply.get('author_id') %><%= reply.escape('body')%></div>
-  <div class="infoline">
-    <span class="glyphicon glyphicon-time"></span> <%= reply.get('time_ago') || "less than a minute" %> ago</div>
-    <% if (reply.get('author_id') === CURRENT_USER_ID) { %>
-      <button class="del">&times;</button>
-    <% }; %>
-  <br>
+<p>
+<% if (reply.get('author_id') === this.model.collection.post.get("author_id")) { %>
+<img src="http://res.cloudinary.com/daqsrembo/image/upload/c_scale,w_40/v1434488266/icons_op.png" />
+<% } else { %>
+<img src="http://res.cloudinary.com/daqsrembo/image/upload/c_scale,w_40/v1434488266/icons_<%= (reply.get('author_id') + reply.get('post_id')) % 20 %>.png" />
+<% } %>
+<%= reply.escape('body')%>
+</p>
+<footer>
+  <span class="glyphicon glyphicon-time"></span> <%= reply.get('time_ago') || "less than a minute" %> ago
+  <% if (reply.get('author_id') === CURRENT_USER_ID) { %>
+    <button class="del" title="Delete">&times;</button>
+  <% }; %>
+</footer>
