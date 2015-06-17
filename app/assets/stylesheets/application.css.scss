@@ -51,17 +51,17 @@ form > textarea::-webkit-input-placeholder {
   color: #ccc;
 }
 
-.bar {
-  padding-top: 10px;
-  float: none;
+.avatar {
+  float: left;
+  position: absolute;
+}
+
+.reply-body {
+  padding-left: 10%;
 }
 
 .nav-tabs > li > a:hover.btn {
   background-color: #286090;
-}
-
-body {
-  background-image: url(http://www.yikyakapp.com/wp-content/themes/yik-yak-web-general/img/home/map.png);
 }
 
 footer,
@@ -70,16 +70,21 @@ header {
 }
 
 .list-group {
-  width: 250px;
   margin: auto;
   text-align: center;
+  width: 250px;
+}
+
+.bar {
+  float: none;
+  padding-top: 10px;
 }
 
 .posts,
 .bar {
   margin-left: 20%;
   margin-right: 20%;
-  padding: 0px;
+  padding: 0;
 }
 
 blockquote {
@@ -88,6 +93,10 @@ blockquote {
   border-radius: 3px;
   margin: auto;
   min-width: 450px;
+}
+
+body, blockquote.post {
+  background-image: url(http://www.yikyakapp.com/wp-content/themes/yik-yak-web-general/img/home/map.png);
 }
 
 body { padding-top: 50px; }
