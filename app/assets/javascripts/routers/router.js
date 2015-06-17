@@ -6,13 +6,23 @@ Yeehaw.Routers.Router = Backbone.Router.extend({
   routes: {
     '': 'showGroup',
     'groups/': 'indexGroup',
-    'groups/:id': 'showGroup'
+    'groups/:id': 'showGroup',
+    'posts/': 'indexPosts'
   },
 
   indexGroup: function () {
     Yeehaw.Collections.groups.fetch();
     var indexView = new Yeehaw.Views.GroupsIndex({
       collection: Yeehaw.Collections.groups
+    });
+    this._swapView(indexView);
+  },
+
+  indexPosts: function () {
+    var posts = new Yeehaw.Collections.Posts([], {});
+    posts.fetch();
+    var indexView = new Yeehaw.Views.PostsIndex({
+      collection: posts
     });
     this._swapView(indexView);
   },
