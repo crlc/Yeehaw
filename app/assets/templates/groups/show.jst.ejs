@@ -1,11 +1,13 @@
 <% if (group.get("member?")) { %>
   <div class="bar">
     <ul class="nav nav-tabs nav-justified">
-      <li class="active"><a href="#/">Nearby</a></li>
+      <li <% if (group.get('id') === 1) { %> class="active" <% }; %> >
+        <a href="#/">Nearby</a></li>
       <% if (group.get('herd') === 1) { %>
         <li><a href="#/groups/">Add Herd</a></li>
       <% } else { %>
-        <li><a href="#/groups/<%= group.get('herd') %>">My Herd</a></li>
+        <li <% if (group.get('id') !== 1) { %> class="active" <% }; %> >
+          <a href="#/groups/<%= group.get('herd') %>">My Herd</a></li>
       <% }; %>
       <li>
         <a role="button" class="btn-compose btn btn-primary">
