@@ -21,7 +21,8 @@ class Api::GroupsController < ApplicationController
   end
 
   def show
-    @group = Group.includes(:users, posts: :replies).find(params[:id])
+    @group = Group.includes(posts: :replies).find(params[:id])
+    @followings = current_user.followings
     render 'show'
   end
 

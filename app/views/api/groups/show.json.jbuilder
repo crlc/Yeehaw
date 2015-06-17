@@ -1,6 +1,8 @@
 json.extract! @group, :id, :title, :created_at, :updated_at
-json.member? @group.member?(current_user)
-json.herd current_user.groups.last.id
+json.member? @followings.any? { |following| following.group_id == @group.id }
+
+herd = @followings.find { |following| following.group_id != 1 }
+json.herd_id herd && herd.group_id
 
 json.posts @group.posts do |post|
   json.extract! post, :id, :handle, :author_id, :body, :created_at, :updated_at
