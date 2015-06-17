@@ -1,6 +1,5 @@
 Yeehaw.Collections.Posts = Backbone.Collection.extend({
   model: Yeehaw.Models.Post,
-  url: '/api/posts',
 
   comparator: function (post) {
     return -(new Date(post.get('created_at')));
@@ -8,6 +7,7 @@ Yeehaw.Collections.Posts = Backbone.Collection.extend({
 
   initialize: function (models, options) {
     this.group = options.group;
+    this.url = options.url || '/api/posts';
   },
 
   getOrFetch: function (id) {

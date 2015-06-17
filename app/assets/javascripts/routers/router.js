@@ -7,7 +7,8 @@ Yeehaw.Routers.Router = Backbone.Router.extend({
     '': 'showGroup',
     'groups/': 'indexGroup',
     'groups/:id': 'showGroup',
-    'posts/': 'indexPosts'
+    'posts/': 'indexPosts',
+    'replies/': 'indexReplies'
   },
 
   indexGroup: function () {
@@ -23,6 +24,15 @@ Yeehaw.Routers.Router = Backbone.Router.extend({
     posts.fetch();
     var indexView = new Yeehaw.Views.PostsIndex({
       collection: posts
+    });
+    this._swapView(indexView);
+  },
+
+  indexReplies: function () {
+    var replies = new Yeehaw.Collections.Posts([],{ url: '/api/replies'});
+    replies.fetch();
+    var indexView = new Yeehaw.Views.PostsIndex({
+      collection: replies
     });
     this._swapView(indexView);
   },

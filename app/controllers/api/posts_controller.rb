@@ -18,6 +18,7 @@ class Api::PostsController < ApplicationController
 
   def index
     @posts = current_user.posts
+    @replies = Reply.all
     render 'index'
   end
 

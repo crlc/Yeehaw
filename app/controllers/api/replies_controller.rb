@@ -16,6 +16,12 @@ class Api::RepliesController < ApplicationController
     render json: { message: 'deleted' }
   end
 
+  def index
+    @posts = Post.all
+    @replies = current_user.replies
+    render 'index'
+  end
+
   private
 
   def reply_params

@@ -14,7 +14,7 @@ Yeehaw.Views.PostsIndex = Backbone.CompositeView.extend({
   },
 
   render: function () {
-    var renderedContent = this.template();
+    var renderedContent = this.template({ url: this.collection.url });
     this.$el.html(renderedContent);
     this.collection.each( this.addPost.bind(this) );
     return this;
