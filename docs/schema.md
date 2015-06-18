@@ -4,32 +4,31 @@
 column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
-owner_id    | integer   | not null, foreign key (references users)
 title       | string    | not null
 
 ## followings
 column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
-group_id    | integer   | not null, foreign key (references groups)
 follower_id | integer   | not null, foreign key (references users)
+group_id    | integer   | not null, foreign key (references groups)
 
 ## posts
 column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
-group_id    | integer   | not null, foreign key (references groups)
-author_id   | integer   | not null, foreign key (references users)
 body        | string    | not null
 handle      | string    |
+author_id   | integer   | not null, foreign key (references users)
+group_id    | integer   | not null, foreign key (references groups)
 
 ## replies
 column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
+body        | string    |
 author_id   | integer   | not null, foreign key (references users)
 post_id     | integer   | not null, foreign key (references posts)
-body        | string    |
 
 ## users
 column name     | data type | details

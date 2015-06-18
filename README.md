@@ -1,8 +1,8 @@
 # Yeehaw
 
-[Heroku link][heroku]
+[Website link][domain]
 
-[heroku]: http://yeehaw.herokuapp.com
+[domain]: http://yeehawapp.me
 
 ## Minimum Viable Product
 Yeehaw is a clone of Yik Yak built on Rails and Backbone. Users can:
@@ -17,6 +17,8 @@ Yeehaw is a clone of Yik Yak built on Rails and Backbone. Users can:
 - [x] Subscribe to a single group
 - [x] Leave group
 - [x] View a feed of subscribed or `nearby` groups
+- [x] View posts from other groups
+- [x] Avatars for conversations
 - [ ] Search for groups by name
 
 ## Design Docs
@@ -60,8 +62,6 @@ I'll need to add `search` routes to both the Groups and Posts controllers. On th
 - [ ] "Upvote/downvote" buttons for posts and replies
 - [ ] Sort posts by new or popularity
 - [ ] User karma
-- [ ] Avatars for conversations
-- [x] View posts from other groups
 - [ ] Post types (image posts, etc)
 - [ ] Sharing posts
 - [ ] Multiple sessions/session management
