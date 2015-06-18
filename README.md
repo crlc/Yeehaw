@@ -41,7 +41,7 @@ I will add API routes to serve group and post data as JSON, then add Backbone mo
 [Details][phase-two]
 
 ### Phase 3: Editing Posts and Groups (~2 days)
-I'll add functionality to the `PostForm` and `PostShow` to edit posts within a minute of creating them. I will also add the ability to join or leave a group.
+I'll add functionality to the `PostForm` and `PostShow` to edit posts within a minute of creating them. I will also add the ability to join or leave a group. I will also add avatars to enable conversations within each post while keeping the users anonymous.
 
 [Details][phase-three]
 
