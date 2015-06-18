@@ -47,9 +47,6 @@ $bg-highlight: #0dd5b2;
   background: $bg-default;
   background: -webkit-linear-gradient(top left, $bg-default 0%, $bg-highlight 100%);
   background: linear-gradient(to bottom right, $bg-default 0%, $bg-highlight 100%);
-  // background: #50a3a2;
-  // background: -webkit-linear-gradient(top left, #50a3a2 0%, #53e3a6 100%);
-  // background: linear-gradient(to bottom right, #50a3a2 0%, #53e3a6 100%);
   position: absolute;
   top: 50px;
   left: 0;
@@ -58,19 +55,21 @@ $bg-highlight: #0dd5b2;
   margin-bottom: -50px;
   overflow: hidden;
 }
-.wrapper.form-success .container h1 {
+.wrapper.form-success h2 {
   -webkit-transform: translateY(85px);
       -ms-transform: translateY(85px);
           transform: translateY(85px);
 }
 .container {
+  height: 400px;
   max-width: 600px;
   margin: 0 auto;
   padding: 80px 0;
-  height: 400px;
   text-align: center;
 }
-.container h1 {
+.wrapper h2 {
+  padding-left: 8%;
+  padding-top: 3%;
   font-size: 40px;
   -webkit-transition-duration: 1s;
           transition-duration: 1s;
@@ -79,7 +78,7 @@ $bg-highlight: #0dd5b2;
   font-weight: 200;
 }
 form {
-  padding: 20px 0;
+  padding: 10px 0;
   position: relative;
   z-index: 2;
 }
@@ -138,9 +137,6 @@ form button:hover {
   position: absolute;
   list-style: none;
   display: block;
-  // width: 40px;
-  // height: 40px;
-  // background-color: rgba(255, 255, 255, 0.15);
   bottom: -10px;
   -webkit-animation: square 25s infinite;
   animation: square 25s infinite;

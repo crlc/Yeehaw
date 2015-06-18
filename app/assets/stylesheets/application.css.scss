@@ -51,6 +51,27 @@ form > textarea::-webkit-input-placeholder {
   color: #ccc;
 }
 
+button.save_yeehaw {
+  background-color: $bg-default;
+  color: white;
+}
+
+button.save_yeehaw:hover {
+  background-color: $bg-highlight;
+  color: #ccc;
+}
+
+textarea {
+  border: 1px solid rgba(100, 100, 100, 0.4);
+  font-size: 18px;
+  resize: none;
+  height: 100px;
+}
+
+textarea[name="handle"] {
+  height: 40px;
+}
+
 .avatar {
   float: left;
   position: absolute;

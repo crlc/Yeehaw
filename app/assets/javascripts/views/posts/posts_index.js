@@ -3,7 +3,7 @@ Yeehaw.Views.PostsIndex = Backbone.CompositeView.extend({
 
   initialize: function () {
     this.listenTo(this.collection, 'add', this.addPost);
-    this.listenTo(this.collection, 'synce add remove', this.render);
+    this.listenTo(this.collection, 'add remove', this.render);
   },
 
   addPost: function (post) {

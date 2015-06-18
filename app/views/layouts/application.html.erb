@@ -5,6 +5,8 @@
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
+  <link rel="shortcut icon" href="http://www.yikyakapp.com/wp-content/themes/yik-yak-web-general/img/global/favicon.png">
+
   <script type="text/javascript" charset="utf-8">
     <% if (current_user) %>
       window.CURRENT_USER_ID = <%= current_user.id %>;
