@@ -17,6 +17,7 @@ class Api::GroupsController < ApplicationController
 
   def index
     @groups = Group.all
+    @followings = current_user.followings
     render 'index'
   end
 
