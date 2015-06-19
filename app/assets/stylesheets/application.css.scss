@@ -9,69 +9,74 @@
 // * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
 // * file per style scope.
 // *
-// *= require_tree .
 // *= require_self
 
 
 @import 'bootstrap-sprockets';
 @import 'bootstrap';
 
+
 $bg-default: #57e2ca;
 $bg-highlight: #0dd5b2;
-$col-default: #fff;
-$col-highlight: #000;
+$white: #fff;
+$black: #000;
 $dk-gray: #ccc;
 $lt-gray: #eee;
 
-.m-content {
-  background-color: white;
-  border-radius: 3px;
-  height: auto;
-  left: 50%;
-  max-height: 80%;
-  overflow-y: scroll;
+
+@import 'groups';
+@import 'posts';
+@import 'sessions';
+@import 'static_pages';
+
+.new-post form,
+.new-reply form {
   padding: 20px;
-  position: fixed;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  width: 600px;
-  z-index: 101;
+
+  input, textarea {
+    border: 1px solid rgba(100, 100, 100, .4);
+    color: $black;
+    font-size: 16px;
+    resize: none;
+    text-align: left;
+    width: 100%;
+  }
+
+  input[name="handle"] {
+    color: $bg-default;
+    width: 100%;
+  }
 }
 
-.m-backdrop {
-  background-color: rgba(170, 169, 176, .5);
-  bottom: 0;
-  left: 0;
+.new-post {
+  background-color: #000;
+  border-radius: 3px;
+  margin-top: 2%;
+  max-width: 35%;
+  min-width: 30%;
+  opacity: .7;
   position: fixed;
-  right: 0;
-  top: 0;
-  z-index: 68;
+  right: 3%;
+  top: 50px;
 }
 
-form > textarea::-webkit-input-placeholder {
-  /* WebKit browsers */
+.new-post form ::-webkit-input-placeholder,
+.new-reply form ::-webkit-input-placeholder {
+  // WebKit browsers
   color: $dk-gray;
 }
 
 button.save_yeehaw {
   background-color: $bg-default;
-  color: white;
+  color: $white;
+  font-size: 16px;
+
+  height: auto;
+  width: auto;
 }
 
 button.save_yeehaw:hover {
   background-color: $bg-highlight;
-  color: $dk-gray;
-}
-
-textarea {
-  border: 1px solid rgba(100, 100, 100, .4);
-  font-size: 18px;
-  height: 100px;
-  resize: none;
-}
-
-textarea[name="handle"] {
-  height: 40px;
 }
 
 .avatar {
@@ -89,11 +94,6 @@ h6 {
 
 header {
   color: $bg-highlight;
-}
-
-.glyphicon-check,
-.glyphicon-unchecked {
-  cursor: pointer;
 }
 
 // p:hover {
@@ -115,167 +115,18 @@ header {
   }
 }
 
-blockquote img {
-  -moz-transition: all .5s ease;
-  -ms-transition: all .5s ease;
-  -o-transition: all .5s ease;
-  -webkit-transition: all .5s ease;
-  transition: all .5s ease;
-}
-
-blockquote img:hover {
-  border-radius: 50%;
-  -moz-transform: rotate(360deg);
-  -ms-transform: rotate(360deg);
-  -o-transform: rotate(360deg);
-  -webkit-transform: rotate(360deg);
-  transform: rotate(360deg);
-}
-
-.btn-compose {
-  margin-top: 2%;
-  position: fixed;
-  right: 5%;
-  top: 50px;
-  width: 60px;
-}
-
-.list-group {
-  margin: auto;
-  text-align: center;
-  width: 250px;
-}
-
-.bar li a {
-  background-color: $dk-gray;
-
-  :link,
-  :visited,
-  :focus {
-    color: inherit;
-    cursor: auto;
-    text-decoration: inherit;
-  }
-}
-
-.bar li a:hover {
-  background-color: $bg-highlight;
-}
-
-.bar li.active a {
-  background-color: $bg-default;
-}
-
-.bar li.active a:hover {
-  background-color: $bg-default;
-}
-
-.bar {
-  float: none;
-  margin-left: 20%;
-  margin-right: 20%;
-  padding-top: 2%;
-}
-
-.posts {
-  margin-left: 20%;
-  margin-right: 20%;
-  padding: 0;
-}
-
-blockquote button.del {
-  display: none;
-}
-
-blockquote:hover button.del{
-  display: inline;
-}
-
 blockquote {
-  background-color: #fff;
+  background-color: $white;
   border-bottom: 2px solid $lt-gray;
   border-radius: 3px;
   margin: auto;
-  min-width: 450px;
   max-width: 1000px;
+  min-width: 450px;
 }
 
-body, blockquote.post {
+body,
+blockquote.post {
   background-image: url('http://www.yikyakapp.com/wp-content/themes/yik-yak-web-general/img/home/map.png');
 }
 
 body { padding-top: 50px; }
-
-.navbar-default {
-  background-color: $bg-default;
-  border-color: $bg-highlight;
-
-  .navbar-brand {
-    color: $col-default;
-
-    &:hover,
-    &:focus {
-      color: $col-highlight; }}
-
-  .navbar-text {
-    color: $col-default; }
-
-  .navbar-nav {
-    > li {
-      > a {
-        color: $col-default;
-
-        &:hover,
-        &:focus {
-          color: $col-highlight; }}}
-
-    > .active {
-      > a,
-      > a:hover,
-      > a:focus {
-        background-color: $bg-highlight;
-        color: $col-highlight; }}
-
-    > .open {
-      > a,
-      > a:hover,
-      > a:focus {
-        background-color: $bg-highlight;
-        color: $col-highlight; }}}
-
-  .navbar-toggle {
-    border-color: $bg-highlight;
-
-    &:hover,
-    &:focus {
-      background-color: $bg-highlight; }
-
-    .icon-bar {
-      background-color: $col-default; }}
-
-  .navbar-collapse,
-  .navbar-form {
-    border-color: $col-default;}
-
-  .navbar-link {
-    color: $col-default;
-
-    &:hover {
-      color: $col-highlight; }}}
-
-@media (max-width: 767px) {
-  .navbar-default .navbar-nav .open .dropdown-menu {
-    > li > a {
-      color: $col-default;
-
-      &:hover,
-      &:focus {
-        color: $col-highlight; }}
-
-    > .active {
-      > a,
-      > a:hover,
-      > a:focus, {
-        background-color: $bg-highlight;
-        color: $col-highlight; }}}
-}

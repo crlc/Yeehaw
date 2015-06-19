@@ -1,3 +1,43 @@
 // Place all the styles related to the groups controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.bar li a {
+  background-color: $dk-gray;
+
+  :link,
+  :visited,
+  :focus {
+    color: inherit;
+    cursor: auto;
+    text-decoration: inherit;
+  }
+}
+
+.bar,
+.posts {
+  margin-left: 10%;
+  padding-right: 10%;
+  padding-top: 2%;
+  font-size: 18px;
+
+  li a:hover {
+    background-color: $bg-highlight;
+  }
+
+  li.active a,
+  li.active a:hover {
+    background-color: $bg-default;
+  }
+}
+
+.glyphicon-check,
+.glyphicon-unchecked {
+  cursor: pointer;
+}
+
+.list-group {
+  margin: auto;
+  text-align: center;
+  width: 250px;
+}

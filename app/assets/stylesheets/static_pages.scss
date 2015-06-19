@@ -1,3 +1,77 @@
 // Place all the styles related to the static_pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.navbar-default {
+  background-color: $bg-default;
+  border-color: $bg-highlight;
+
+  .navbar-brand {
+    color: $white;
+
+    &:hover,
+    &:focus {
+      color: $black; }}
+
+  .navbar-text {
+    color: $white; }
+
+  .navbar-nav {
+    > li {
+      > a {
+        color: $white;
+
+        &:hover,
+        &:focus {
+          color: $black; }}}
+
+    > .active {
+      > a,
+      > a:hover,
+      > a:focus {
+        background-color: $bg-highlight;
+        color: $black; }}
+
+    > .open {
+      > a,
+      > a:hover,
+      > a:focus {
+        background-color: $bg-highlight;
+        color: $black; }}}
+
+  .navbar-toggle {
+    border-color: $bg-highlight;
+
+    &:hover,
+    &:focus {
+      background-color: $bg-highlight; }
+
+    .icon-bar {
+      background-color: $white; }}
+
+  .navbar-collapse,
+  .navbar-form {
+    border-color: $white;}
+
+  .navbar-link {
+    color: $white;
+
+    &:hover {
+      color: $black; }}}
+
+@media (max-width: 767px) {
+  .navbar-default .navbar-nav .open .dropdown-menu {
+    > li > a {
+      color: $white;
+
+      &:hover,
+      &:focus {
+        color: $black; }}
+
+    > .active {
+      > a,
+      > a:hover,
+      > a:focus, {
+        background-color: $bg-highlight;
+        color: $black; }}}
+}

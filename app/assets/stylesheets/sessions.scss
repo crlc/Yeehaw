@@ -11,33 +11,33 @@
 }
 body {
   font-family: 'Source Sans Pro', sans-serif;
-  color: white;
+  color: $black;
   font-weight: 300;
 }
 body ::-webkit-input-placeholder {
   /* WebKit browsers */
   font-family: 'Source Sans Pro', sans-serif;
-  color: white;
+  color: $black;
   font-weight: 300;
 }
 body :-moz-placeholder {
   /* Mozilla Firefox 4 to 18 */
   font-family: 'Source Sans Pro', sans-serif;
-  color: white;
+  color: $black;
   opacity: 1;
   font-weight: 300;
 }
 body ::-moz-placeholder {
   /* Mozilla Firefox 19+ */
   font-family: 'Source Sans Pro', sans-serif;
-  color: white;
+  color: $black;
   opacity: 1;
   font-weight: 300;
 }
 body :-ms-input-placeholder {
   /* Internet Explorer 10+ */
   font-family: 'Source Sans Pro', sans-serif;
-  color: white;
+  color: $black;
   font-weight: 300;
 }
 
@@ -83,11 +83,11 @@ form {
   z-index: 2;
 }
 
-form input {
+form input, form textarea {
   appearance: none;
   outline: 0;
-  border: 1px solid rgba(255, 255, 255, 0.4);
-  background-color: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, .4);
+  background-color: rgba(255, 255, 255, .2);
   width: 250px;
   border-radius: 3px;
   padding: 10px 15px;
@@ -95,23 +95,23 @@ form input {
   display: block;
   text-align: center;
   font-size: 18px;
-  color: white;
+  color: $white;
   -webkit-transition-duration: 0.25s;
           transition-duration: 0.25s;
   font-weight: 300;
 }
-form input:hover {
-  background-color: rgba(255, 255, 255, 0.4);
+form input:hover, form textarea:hover {
+  background-color: rgba(255, 255, 255, .4);
 }
-form input:focus {
-  background-color: white;
+form input:focus, form textarea:focus {
+  background-color: $white;
   width: 300px;
   color: #53e3a6;
 }
 form button {
   appearance: none;
   outline: 0;
-  background-color: white;
+  background-color: $white;
   border: 0;
   padding: 10px 15px;
   color: #53e3a6;
