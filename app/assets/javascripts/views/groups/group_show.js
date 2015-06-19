@@ -1,9 +1,6 @@
 Yeehaw.Views.GroupShow = Backbone.CompositeView.extend({
   template: JST['groups/show'],
-
-  events: {
-    'click .btn-compose': 'openPostForm'
-  },
+  className: 'group-show',
 
   initialize: function () {
     this.collection = this.model.posts();
@@ -19,12 +16,12 @@ Yeehaw.Views.GroupShow = Backbone.CompositeView.extend({
     this.addSubview('.posts', view);
   },
 
-  openPostForm: function () {
-    var modal = new Yeehaw.Views.PostForm({
+  postForm: function () {
+    var view = new Yeehaw.Views.PostForm({
       model: new Yeehaw.Models.Post(),
       collection: this.collection
     });
-    $('body').prepend(modal.render().$el);
+    this.$el.append(view.render().$el);
   },
 
   render: function () {
@@ -33,6 +30,9 @@ Yeehaw.Views.GroupShow = Backbone.CompositeView.extend({
     });
     this.$el.html(renderedContent);
     this.collection.each( this.addPost.bind(this) );
+    if (this.model.get("member?")) {
+      this.postForm();
+    }
     return this;
   }
 });

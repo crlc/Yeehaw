@@ -1,9 +1,8 @@
 Yeehaw.Views.PostForm = Backbone.View.extend({
   template: JST['posts/form'],
-
+  className: 'new-post',
+  
   events: {
-    'click .close': 'remove',
-    'click .m-backdrop': 'remove',
     'click button': 'createPost'
   },
 
@@ -20,7 +19,7 @@ Yeehaw.Views.PostForm = Backbone.View.extend({
     this.model.save({}, {
       success: function () {
         this.collection.add(this.model);
-        this.remove();
+        Backbone.history.loadUrl();
       }.bind(this)
     });
   },

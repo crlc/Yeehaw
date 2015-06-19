@@ -1,9 +1,9 @@
 Yeehaw.Views.ReplyForm = Backbone.View.extend({
   template: JST['replies/form'],
-  tagName: 'form',
+  className: 'new-reply',
 
   events:{
-    'mousedown .new_reply': 'clearTextArea',
+    'mousedown textarea': 'clearTextArea',
     'keyup textarea': 'renderPreview',
     'click button': 'createReply'
   },
@@ -14,7 +14,7 @@ Yeehaw.Views.ReplyForm = Backbone.View.extend({
   },
 
   clearTextArea: function (event) {
-    this.$('.new_reply').empty();
+    this.$('textarea').empty();
   },
 
   render: function () {
