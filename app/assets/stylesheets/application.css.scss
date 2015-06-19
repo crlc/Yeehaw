@@ -94,16 +94,19 @@ header {
   cursor: pointer;
 }
 
+p:hover {
+  cursor: pointer;
+  text-shadow:
+    // 1px 0px 1px #ccc,
+    0px 1px 1px #eee,
+    // 2px 1px 1px #ccc, 1px 2px 1px #eee,
+    // 3px 2px 1px #ccc, 2px 3px 1px #eee
+}
+
 .post-display {
   padding-top: 1%;
   :hover {
-    background-color: rgb(253, 253, 253);
-    cursor: pointer;
-    text-shadow:
-      // 1px 0px 1px #ccc,
-      0px 1px 1px #eee,
-      // 2px 1px 1px #ccc, 1px 2px 1px #eee,
-      // 3px 2px 1px #ccc, 2px 3px 1px #eee
+    background-color: rgb(252, 252, 252);
   }
 }
 
