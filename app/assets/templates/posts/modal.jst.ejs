@@ -5,11 +5,11 @@
   <blockquote class="post">
     <header><strong><%= post.get("handle") %></strong></header>
     <p><a href="#/posts/<%= post.get('id') %>"><%= post.escape("body") %></a></p>
-    <footer><span class="glyphicon glyphicon-time"></span> <%= post.get("time_ago")%> ago
+    <h6><span class="glyphicon glyphicon-time"></span> <%= post.get("time_ago")%> ago
     <% if (post.get("author_id") === CURRENT_USER_ID) { %>
       <button class="del" title="Close">&times;</button>
     <% } %>
-  </footer>
+  </h6>
   </blockquote>
 
   <div class="post-modal-replies"></div>

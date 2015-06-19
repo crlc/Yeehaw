@@ -25,13 +25,13 @@ $col-highlight: #000;
   background-color: white;
   border-radius: 3px;
   height: auto;
-  left: 25%;
-  margin-top: 60px;
-  padding: 20px;
-  position:fixed;
+  left: 50%;
   max-height: 80%;
   overflow-y: scroll;
-  // /* margin: 0 auto; */
+  padding: 20px;
+  position: fixed;
+  top: 50%;
+  transform: translate(-50%, -50%);
   width: 600px;
   z-index: 101;
 }
@@ -85,7 +85,10 @@ textarea[name="handle"] {
   background-color: #286090;
 }
 
-footer,
+h6 {
+  color: #ccc;
+}
+
 header {
   color: $bg-highlight;
 }
@@ -94,23 +97,26 @@ header {
   cursor: pointer;
 }
 
-p:hover {
-  cursor: pointer;
-  text-shadow:
-    // 1px 0px 1px #ccc,
-    0px 1px 1px #eee,
-    // 2px 1px 1px #ccc, 1px 2px 1px #eee,
-    // 3px 2px 1px #ccc, 2px 3px 1px #eee
-}
+// p:hover {
+//   cursor: pointer;
+//   text-shadow:
+//     // 1px 0px 1px #ccc,
+//     0px 1px 1px #eee,
+//     // 2px 1px 1px #ccc, 1px 2px 1px #eee,
+//     // 3px 2px 1px #ccc, 2px 3px 1px #eee
+// }
 
 .post-display {
-  padding-top: 1%;
+  padding-top: 3%;
   :hover {
+    cursor: pointer;
+    text-shadow:
+      0px 1px 1px #eee;
     background-color: rgb(252, 252, 252);
   }
 }
 
-img, .glyphicon-time {
+blockquote img {
   -webkit-transition: all 0.5s ease;
      -moz-transition: all 0.5s ease;
        -o-transition: all 0.5s ease;
@@ -118,7 +124,7 @@ img, .glyphicon-time {
           transition: all 0.5s ease;
 }
 
-img:hover, .glyphicon-time:hover {
+blockquote img:hover {
   border-radius: 50%;
   -webkit-transform: rotate(360deg);
      -moz-transform: rotate(360deg);
@@ -153,12 +159,21 @@ img:hover, .glyphicon-time:hover {
   padding: 0;
 }
 
+blockquote button.del {
+  display: none;
+}
+
+blockquote:hover button.del{
+  display: inline;
+}
+
 blockquote {
   background-color: #fff;
   border-bottom: 2px solid #eee;
   border-radius: 3px;
   margin: auto;
   min-width: 450px;
+  max-width: 1000px;
 }
 
 body, blockquote.post {

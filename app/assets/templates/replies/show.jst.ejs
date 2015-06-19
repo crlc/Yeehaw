@@ -12,10 +12,10 @@
 
 
 
-<footer>
+<h6>
   <span class="glyphicon glyphicon-time"></span> <%= reply.get('time_ago') || "less than a minute" %> ago
   <% if (reply.get('author_id') === CURRENT_USER_ID) { %>
     <button class="del" title="Delete">&times;</button>
   <% }; %>
-</footer>
+</h6>
 </div>

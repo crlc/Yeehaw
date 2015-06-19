@@ -3,7 +3,7 @@ Yeehaw.Views.PostShow = Backbone.CompositeView.extend({
   template: JST['posts/show'],
 
   events: {
-    'click p': 'showPost'
+    'click': 'showPost'
   },
 
   showPost: function () {
