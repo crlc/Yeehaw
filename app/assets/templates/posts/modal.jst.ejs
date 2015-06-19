@@ -4,7 +4,7 @@
   <button class="close">&times;</button>
   <blockquote class="post">
     <header><strong><%= post.get("handle") %></strong></header>
-    <p><%= post.escape("body") %></p>
+    <p><a href="#/posts/<%= post.get('id') %>"><%= post.escape("body") %></a></p>
     <footer><span class="glyphicon glyphicon-time"></span> <%= post.get("time_ago")%> ago
     <% if (post.get("author_id") === CURRENT_USER_ID) { %>
       <button class="del" title="Close">&times;</button>

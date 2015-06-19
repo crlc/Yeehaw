@@ -17,13 +17,14 @@ class Api::PostsController < ApplicationController
   end
 
   def index
-    @posts = current_user.posts
-    @replies = Reply.all
+    @posts = current_user.posts.includes(:replies)
+    @followings = current_user.followings
     render 'index'
   end
 
   def show
-    @post = Post.find(params[:id])
+    @post = Post.includes(:replies).find(params[:id])
+    @followings = current_user.followings
     render 'show'
   end
 

@@ -2,8 +2,7 @@ Yeehaw.Views.RepliesList = Backbone.CompositeView.extend({
   template: JST['replies/list'],
 
   initialize: function () {
-    var group = this.collection.post.collection.group;
-    if (group && group.get("member?")) {
+    if (this.collection.post.get("member?")) {
       this.replyFormView = new Yeehaw.Views.ReplyForm({
         model: new Yeehaw.Models.Reply(),
         collection: this.collection

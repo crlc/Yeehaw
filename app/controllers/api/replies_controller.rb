@@ -19,6 +19,7 @@ class Api::RepliesController < ApplicationController
   def index
     @posts = Post.all
     @replies = current_user.replies
+    @followings = current_user.followings
     render 'index'
   end
 
