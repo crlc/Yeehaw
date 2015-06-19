@@ -20,6 +20,8 @@ $bg-default: #57e2ca;
 $bg-highlight: #0dd5b2;
 $col-default: #fff;
 $col-highlight: #000;
+$dk-gray: #ccc;
+$lt-gray: #eee;
 
 .m-content {
   background-color: white;
@@ -48,7 +50,7 @@ $col-highlight: #000;
 
 form > textarea::-webkit-input-placeholder {
   /* WebKit browsers */
-  color: #ccc;
+  color: $dk-gray;
 }
 
 button.save_yeehaw {
@@ -58,14 +60,14 @@ button.save_yeehaw {
 
 button.save_yeehaw:hover {
   background-color: $bg-highlight;
-  color: #ccc;
+  color: $dk-gray;
 }
 
 textarea {
-  border: 1px solid rgba(100, 100, 100, 0.4);
+  border: 1px solid rgba(100, 100, 100, .4);
   font-size: 18px;
-  resize: none;
   height: 100px;
+  resize: none;
 }
 
 textarea[name="handle"] {
@@ -81,62 +83,60 @@ textarea[name="handle"] {
   padding-left: 10%;
 }
 
-.nav-tabs > li > a:hover.btn {
-  background-color: #286090;
-}
-
 h6 {
-  color: #ccc;
+  color: $dk-gray;
 }
 
 header {
   color: $bg-highlight;
 }
 
-.glyphicon-check, .glyphicon-unchecked {
+.glyphicon-check,
+.glyphicon-unchecked {
   cursor: pointer;
 }
 
 // p:hover {
 //   cursor: pointer;
 //   text-shadow:
-//     // 1px 0px 1px #ccc,
-//     0px 1px 1px #eee,
-//     // 2px 1px 1px #ccc, 1px 2px 1px #eee,
-//     // 3px 2px 1px #ccc, 2px 3px 1px #eee
+//     // 1px 0px 1px $dk-gray,
+//     0px 1px 1px $lt-gray,
+//     // 2px 1px 1px $dk-gray, 1px 2px 1px $lt-gray,
+//     // 3px 2px 1px $dk-gray, 2px 3px 1px $lt-gray
 // }
 
 .post-display {
   padding-top: 3%;
+
   :hover {
-    cursor: pointer;
-    text-shadow:
-      0px 1px 1px #eee;
     background-color: rgb(252, 252, 252);
+    cursor: pointer;
+    text-shadow: 0 1px 1px $lt-gray;
   }
 }
 
 blockquote img {
-  -webkit-transition: all 0.5s ease;
-     -moz-transition: all 0.5s ease;
-       -o-transition: all 0.5s ease;
-      -ms-transition: all 0.5s ease;
-          transition: all 0.5s ease;
+  -moz-transition: all .5s ease;
+  -ms-transition: all .5s ease;
+  -o-transition: all .5s ease;
+  -webkit-transition: all .5s ease;
+  transition: all .5s ease;
 }
 
 blockquote img:hover {
   border-radius: 50%;
+  -moz-transform: rotate(360deg);
+  -ms-transform: rotate(360deg);
+  -o-transform: rotate(360deg);
   -webkit-transform: rotate(360deg);
-     -moz-transform: rotate(360deg);
-       -o-transform: rotate(360deg);
-      -ms-transform: rotate(360deg);
-          transform: rotate(360deg);
+  transform: rotate(360deg);
 }
 
 .btn-compose {
+  margin-top: 2%;
   position: fixed;
-  top: 60px;
   right: 5%;
+  top: 50px;
   width: 60px;
 }
 
@@ -146,11 +146,35 @@ blockquote img:hover {
   width: 250px;
 }
 
+.bar li a {
+  background-color: $dk-gray;
+
+  :link,
+  :visited,
+  :focus {
+    color: inherit;
+    cursor: auto;
+    text-decoration: inherit;
+  }
+}
+
+.bar li a:hover {
+  background-color: $bg-highlight;
+}
+
+.bar li.active a {
+  background-color: $bg-default;
+}
+
+.bar li.active a:hover {
+  background-color: $bg-default;
+}
+
 .bar {
   float: none;
   margin-left: 20%;
   margin-right: 20%;
-  padding-top: 10px;
+  padding-top: 2%;
 }
 
 .posts {
@@ -169,7 +193,7 @@ blockquote:hover button.del{
 
 blockquote {
   background-color: #fff;
-  border-bottom: 2px solid #eee;
+  border-bottom: 2px solid $lt-gray;
   border-radius: 3px;
   margin: auto;
   min-width: 450px;
@@ -177,7 +201,7 @@ blockquote {
 }
 
 body, blockquote.post {
-  background-image: url(http://www.yikyakapp.com/wp-content/themes/yik-yak-web-general/img/home/map.png);
+  background-image: url('http://www.yikyakapp.com/wp-content/themes/yik-yak-web-general/img/home/map.png');
 }
 
 body { padding-top: 50px; }
@@ -189,7 +213,8 @@ body { padding-top: 50px; }
   .navbar-brand {
     color: $col-default;
 
-    &:hover, &:focus {
+    &:hover,
+    &:focus {
       color: $col-highlight; }}
 
   .navbar-text {

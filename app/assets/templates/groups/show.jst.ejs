@@ -1,23 +1,23 @@
-<% if (group.get("member?")) { %>
-  <div class="bar">
-    <ul class="nav nav-pills nav-justified">
-      <li></li>
-      <li <% if (group.get('id') === 1) { %> class="active" <% }; %> >
-        <a href="#/">Nearby</a>
-      </li>
-      <% if (group.get('herd_id')) { %>
-        <li <% if (group.get('id') !== 1) { %> class="active" <% }; %> >
-          <a href="#/groups/<%= group.get('herd_id') %>">My Herd</a>
-        </li>
-      <% } else { %>
-        <li>
-          <a href="#/groups/">Add Herd</a>
-        </li>
+<div class="bar">
+  <ul class="nav nav-pills nav-justified">
+    <li></li>
+    <% if (group.get('herd_id') && group.get("member?")) { %>
+      <% if (group.get('id') === 1) { %>
+        <li class="active"><a>Nearby</a></li>
+        <li><a href="#/groups/<%= group.get('herd_id') %>">My Herd</a></li>
+      <% } else if (group.get('id') !== 1) { %>
+        <li><a href="#/">Nearby</a></li>
+        <li class="active"><a>My Herd</a></li>
       <% }; %>
-      <li></li>
-    </ul>
-
-  </div>
+    <% } else { %>
+      <li class="active">
+        <a><%= group.get("title") %></a>
+      </li>
+    <% }; %>
+    <li></li>
+  </ul>
+</div>
+<% if (group.get("member?")) { %>
   <button role="button" class="btn-compose btn btn-info">
     <span class="glyphicon glyphicon-pencil"></span>
   </button>
