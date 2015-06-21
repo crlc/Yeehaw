@@ -17,6 +17,8 @@ Yeehaw.Views.GroupShow = Backbone.CompositeView.extend({
   },
 
   postForm: function () {
+    $('.posts').addClass('np-form');
+    $('.bar').addClass('np-form');
     var view = new Yeehaw.Views.PostForm({
       model: new Yeehaw.Models.Post(),
       collection: this.collection

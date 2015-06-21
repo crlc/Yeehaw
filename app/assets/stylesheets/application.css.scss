@@ -49,7 +49,7 @@ $lt-gray: #eee;
 }
 
 .new-post {
-  background-color: #000;
+  background-color: $white;
   border-radius: 3px;
   margin-top: 2%;
   max-width: 35%;
@@ -106,7 +106,7 @@ header {
 // }
 
 .post-display {
-  padding-top: 3%;
+  // padding-top: 3%;
 
   :hover {
     background-color: rgb(252, 252, 252);
