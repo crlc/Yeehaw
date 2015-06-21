@@ -5,6 +5,8 @@ class User < ActiveRecord::Base
 
   after_initialize :ensure_session_token
 
+  acts_as_voter
+
   has_many :posts, foreign_key: :author_id, dependent: :destroy
   has_many :replies, foreign_key: :author_id, dependent: :destroy
   has_many :followings, foreign_key: :follower_id
