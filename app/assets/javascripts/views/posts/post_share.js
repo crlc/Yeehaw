@@ -1,11 +1,8 @@
-Yeehaw.Views.PostModal = Backbone.CompositeView.extend({
-  template: JST['posts/modal'],
+Yeehaw.Views.PostShare = Backbone.CompositeView.extend({
+  template: JST['posts/share'],
 
   events: {
-    'click .del': 'destroyPost',
-    'click .close': 'dismiss',
-    'click .m-backdrop' : 'dismiss',
-    'click a' : 'share'
+    'click .del': 'destroyPost'
   },
 
   initialize: function () {
@@ -14,23 +11,12 @@ Yeehaw.Views.PostModal = Backbone.CompositeView.extend({
     this.replyListView = new Yeehaw.Views.RepliesList({
       collection: this.model.replies()
     });
-
-    this.addSubview('.post-modal-replies', this.replyListView);
+    this.addSubview('.post-replies', this.replyListView);
   },
 
   destroyPost: function (event) {
     event.preventDefault();
     this.model.destroy();
-    this.remove();
-  },
-
-  dismiss: function (event) {
-    event.preventDefault();
-    this.remove();
-    Backbone.history.loadUrl();
-  },
-
-  share: function (event) {
     this.remove();
   },
 

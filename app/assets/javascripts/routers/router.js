@@ -8,7 +8,7 @@ Yeehaw.Routers.Router = Backbone.Router.extend({
     'groups/': 'indexGroup',
     'groups/:id': 'showGroup',
     'posts/': 'indexPosts',
-    'posts/:id': 'showPost',
+    'posts/:id': 'sharePost',
     'replies/': 'indexReplies'
   },
 
@@ -47,11 +47,10 @@ Yeehaw.Routers.Router = Backbone.Router.extend({
     this._swapView(formView);
   },
 
-  showPost: function (id) {
+  sharePost: function (id) {
     var post = new Yeehaw.Models.Post({ id: id });
     post.fetch();
-    // change from modal to regular show
-    var formView = new Yeehaw.Views.PostModal({
+    var formView = new Yeehaw.Views.PostShare({
       model: post
     });
     this._swapView(formView);

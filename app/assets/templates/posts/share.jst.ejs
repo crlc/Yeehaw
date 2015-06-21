@@ -1,0 +1,13 @@
+<div class="m-content">
+  <blockquote class="post">
+    <header><strong><%= post.get("handle") %></strong></header>
+    <p><%= post.escape("body") %></p>
+    <h6><span class="glyphicon glyphicon-time"></span> <%= post.get("time_ago")%> ago
+    <% if (post.get("author_id") === CURRENT_USER_ID) { %>
+      <button class="del" title="Close">&times;</button>
+    <% } %>
+  </h6>
+  </blockquote>
+
+  <div class="post-replies"></div>
+</div>
