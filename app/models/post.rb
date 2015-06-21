@@ -6,4 +6,5 @@ class Post < ActiveRecord::Base
   belongs_to :author, class_name: 'User'
   belongs_to :group
   has_many :replies, dependent: :destroy
+  acts_as_votable
 end
