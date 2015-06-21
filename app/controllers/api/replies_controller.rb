@@ -23,6 +23,30 @@ class Api::RepliesController < ApplicationController
     render 'index'
   end
 
+  def upvote
+    @reply = Reply.find(params[:id])
+    @reply.liked_by current_user
+    render json: @reply
+  end
+
+  def downvote
+    @reply = Reply.find(params[:id])
+    @reply.disliked_by current_user
+    render json: @reply
+  end
+
+  def unupvote
+    @reply = Reply.find(params[:id])
+    @reply.unliked_by current_user
+    render json: @reply
+  end
+
+  def undownvote
+    @reply = Reply.find(params[:id])
+    @reply.undisliked_by current_user
+    render json: @reply
+  end
+
   private
 
   def reply_params

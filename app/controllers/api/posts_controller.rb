@@ -28,6 +28,30 @@ class Api::PostsController < ApplicationController
     render 'show'
   end
 
+  def upvote
+    @post = Post.find(params[:id])
+    @post.liked_by current_user
+    render json: @post
+  end
+
+  def downvote
+    @post = Post.find(params[:id])
+    @post.disliked_by current_user
+    render json: @post
+  end
+
+  def unupvote
+    @post = Post.find(params[:id])
+    @post.unliked_by current_user
+    render json: @post
+  end
+
+  def undownvote
+    @post = Post.find(params[:id])
+    @post.undisliked_by current_user
+    render json: @post
+  end
+
   private
 
   def current_group
