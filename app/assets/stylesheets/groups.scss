@@ -20,12 +20,15 @@
   padding-right: 35%;
 }
 
+.bar {
+  padding-top: 2%;
+}
+
 .bar,
 .posts {
   font-size: 18px;
   margin-left: 20%;
   padding-right: 20%;
-  padding-top: 2%;
 
   li a:hover {
     background-color: $bg-highlight;
