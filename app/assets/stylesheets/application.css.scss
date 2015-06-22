@@ -100,6 +100,10 @@ header {
 .post-display {
   padding-top: 3%;
 
+  blockquote {
+    float: left;
+  }
+
   :hover {
     background-color: rgb(252, 252, 252);
     cursor: pointer;
@@ -107,11 +111,15 @@ header {
   }
 }
 
+p {
+  width: 95%;
+}
+
 blockquote {
   background-color: $white;
   border-bottom: 2px solid $lt-gray;
   border-radius: 3px;
-  float: left;
+  // float: left;
 }
 
 body,
