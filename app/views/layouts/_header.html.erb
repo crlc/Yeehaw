@@ -1,6 +1,7 @@
 <nav class="navbar navbar-default navbar-fixed-top">
   <div class="container-fluid">
-    <!-- Brand and toggle get grouped for better mobile display -->
+      <!-- Brand and toggle get grouped for better mobile display -->
+
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
         <span class="sr-only">Toggle navigation</span>
@@ -11,13 +12,18 @@
       <a href="#/"><img src="http://res.cloudinary.com/daqsrembo/image/upload/c_scale,h_50/v1434860778/Yeehaw-logo_2_lkkrh1.png" /></a>
     </div>
 
-    <!-- Collect the nav links, forms, and other content for toggling -->
+      <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
+
         <% if signed_in? %>
-          <li><a class="compose" title="Compose" role="button"><span class="glyphicon glyphicon-pencil"></span>Compose</a></li>
-          <li><a href="#/" title="Home"><span class="glyphicon glyphicon-home"></span>Home</a></li>
-          <li><a href="#/groups/" title="Peek"><span class="glyphicon glyphicon-globe"></span>Peek</a></li>
+          <li><a class="compose" title="Compose" role="button">
+            <span class="glyphicon glyphicon-pencil"></span>Compose</a></li>
+          <li><a href="#/" title="Home">
+            <span class="glyphicon glyphicon-home"></span>Home</a></li>
+          <li><a href="#/groups/" title="Peek">
+            <span class="glyphicon glyphicon-globe"></span>Peek</a></li>
+
           <li id='add-dropdown' class='dropdown'>
             <a href="#" class='dropdown-toggle' data-toggle='dropdown'
               role="button" aria-expanded="false" title="Me">
@@ -29,11 +35,14 @@
               <li><a href="#/replies/">My Replies</a></li>
             </ul>
           </li>
-          <li><a data-method="delete" href="<%= session_url %>" title="Signout"><span class="glyphicon glyphicon-log-out"></span>Signout</a></li>
+
+          <li><a data-method="delete" href="<%= session_url %>" title="Signout">
+            <span class="glyphicon glyphicon-log-out"></span>Signout</a></li>
         <% else %>
           <li><a href="<%= new_session_url %>" title="Login">Login</a></li>
           <li><a href="<%= new_user_url %>" title="Sign up">Sign up</a></li>
         <% end %>
+
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->

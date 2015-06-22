@@ -1,6 +1,5 @@
 <div class="bar">
   <ul class="nav nav-pills nav-justified">
-    <li></li>
     <% if (group.get('herd_id') && group.get("member?")) { %>
       <% if (group.get('id') === 1) { %>
         <li class="active"><a>Nearby</a></li>
@@ -14,7 +13,6 @@
         <a><%= group.get("title") %></a>
       </li>
     <% }; %>
-    <li></li>
   </ul>
 </div>
 

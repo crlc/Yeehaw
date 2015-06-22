@@ -110,11 +110,6 @@ body {
 
 @-webkit-keyframes appear {
 
-  50% {
-    -webkit-transform: translateX(-70%);
-    transform: translateX(-70%);
-  }
-
   100% {
     -webkit-transform: translateX(-200%);
     transform: translateX(-200%);
@@ -122,11 +117,6 @@ body {
 }
 
 @keyframes appear {
-
-  50% {
-    -webkit-transform: translateX(-70%);
-    transform: translateX(-70%);
-  }
 
   100% {
     -webkit-transform: translateX(-200%);
