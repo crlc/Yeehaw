@@ -9,14 +9,18 @@ Rails.application.routes.draw do
     resources :groups, except: [:new, :edit]
     resources :posts, except: [:new, :edit] do
       member do
-        put 'like',    to: 'posts#upvote'
-        put 'dislike', to: 'posts#downvote'
+        post 'like',    to: 'posts#upvote'
+        post 'dislike', to: 'posts#downvote'
+        post 'unlike',    to: 'posts#unupvote'
+        post 'undislike', to: 'posts#undownvote'
       end
     end
     resources :replies, except: [:new, :edit] do
       member do
-        put 'like',    to: 'replies#upvote'
-        put 'dislike', to: 'replies#downvote'
+        post 'like',    to: 'replies#upvote'
+        post 'dislike', to: 'replies#downvote'
+        post 'unlike',    to: 'replies#unupvote'
+        post 'undislike', to: 'replies#undownvote'
       end
     end
   end

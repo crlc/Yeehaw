@@ -37,9 +37,17 @@ blockquote img:hover {
   padding: 20px;
   position: fixed;
   top: 50%;
+  -moz-transform: rotate(-50%, -50%);
+  -ms-transform: rotate(-50%, -50%);
+  -o-transform: rotate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   width: 600px;
   z-index: 101;
+
+  blockquote {
+    width: 100%;
+  }
 }
 
 .m-backdrop {
@@ -50,4 +58,60 @@ blockquote img:hover {
   right: 0;
   top: 0;
   z-index: 68;
+}
+
+.votes {
+  background: transparent;
+  float: right;
+  -moz-transform: rotate(-50px, 50%);
+  -ms-transform: rotate(-50px, 50%);
+  -o-transform: rotate(-50px, 50%);
+  -webkit-transform: translate(-50px, 50%);
+  transform: translate(-50px, 50%);
+}
+
+.upvote {
+  background-repeat: no-repeat;
+  color: $dk-gray;
+  cursor: pointer;
+  display: block;
+  height: 14px;
+  width: 15px;
+}
+
+.upvoted {
+  background-repeat: no-repeat;
+  color: $bg-highlight;
+  cursor: pointer;
+  display: block;
+  height: 14px;
+  width: 15px;
+}
+
+.votecount {
+  color: $black;
+  display: block;
+  font: normal x-small verdana,arial,helvetica,sans-serif;
+  font-size: small;
+  font-weight: bold;
+  margin-left: 3px;
+  text-align: left-center;
+}
+
+.downvote {
+  background-repeat: no-repeat;
+  color: $dk-gray;
+  cursor: pointer;
+  display: block;
+  height: 14px;
+  width: 15px;
+}
+
+.downvoted {
+  background-repeat: no-repeat;
+  color: $bg-highlight;
+  cursor: pointer;
+  display: block;
+  height: 14px;
+  width: 15px;
 }

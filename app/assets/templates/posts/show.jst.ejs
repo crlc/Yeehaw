@@ -3,3 +3,20 @@
 <p><%= post.escape("body") %></p>
 <h6><span class="glyphicon glyphicon-time"></span> <%= post.get("time_ago") || "less than a minute" %> ago <%= post.get("reply_count") || "0" %> replies</h6>
 </blockquote>
+<% if (post.get("member?")) { %>
+<div class="votes">
+  <% if (post.escape("up_voted") === "true") { %>
+    <div class="upvoted glyphicon glyphicon-menu-up"></div>
+  <% } else { %>
+    <div class="upvote glyphicon glyphicon-menu-up"></div>
+  <% }; %>
+
+  <div class="votecount"><%= post.escape("vote_count") %></div>
+
+  <% if (post.escape("up_voted") === "false") { %>
+    <div class="downvoted glyphicon glyphicon-menu-down"></div>
+  <% } else { %>
+    <div class="downvote glyphicon glyphicon-menu-down"></div>
+  <% }; %>
+</div>
+<%  }; %>

@@ -97,15 +97,6 @@ header {
   color: $bg-highlight;
 }
 
-// p:hover {
-//   cursor: pointer;
-//   text-shadow:
-//     // 1px 0px 1px $dk-gray,
-//     0px 1px 1px $lt-gray,
-//     // 2px 1px 1px $dk-gray, 1px 2px 1px $lt-gray,
-//     // 3px 2px 1px $dk-gray, 2px 3px 1px $lt-gray
-// }
-
 .post-display {
   padding-top: 3%;
 
@@ -120,9 +111,7 @@ blockquote {
   background-color: $white;
   border-bottom: 2px solid $lt-gray;
   border-radius: 3px;
-  margin: auto;
-  max-width: 1000px;
-  min-width: 450px;
+  float: left;
 }
 
 body,
