@@ -5,7 +5,9 @@ Yeehaw.Views.PostShow = Backbone.CompositeView.extend({
   events: {
     'click blockquote': 'showPost',
     'click .upvote': 'upvote',
-    'click .downvote': 'downvote'
+    'click .downvote': 'downvote',
+    'click .upvoted': 'unupvote',
+    'click .downvoted': 'undownvote'
   },
 
   showPost: function () {
@@ -17,7 +19,7 @@ Yeehaw.Views.PostShow = Backbone.CompositeView.extend({
 
   upvote: function () {
     var post = this.model;
-    var newVote = new Yeehaw.Models.Upvote({ post_id: post.id });
+    var newVote = new Yeehaw.Models.Upvote({ post_id: post.id, path: '/like' });
     var vote = 1;
     if (post.get('up_voted') === false) {
       vote += 1;
@@ -32,7 +34,7 @@ Yeehaw.Views.PostShow = Backbone.CompositeView.extend({
 
   downvote: function () {
     var post = this.model;
-    var newVote = new Yeehaw.Models.Downvote({ post_id: post.id });
+    var newVote = new Yeehaw.Models.Downvote({ post_id: post.id, path: '/dislike' });
     var vote = 1;
     if (post.get('up_voted') === true) {
       vote += 1;
@@ -42,6 +44,26 @@ Yeehaw.Views.PostShow = Backbone.CompositeView.extend({
     this.render();
     this.$('.upvoted').removeClass('upvoted').addClass('upvote');
     this.$('.downvote').removeClass('downvote').addClass('downvoted');
+    newVote.save();
+  },
+
+  unupvote: function () {
+    var post = this.model;
+    var newVote = new Yeehaw.Models.Upvote({ post_id: post.id, path: '/unlike' });
+    post.set('up_voted', null);
+    post.set('vote_count', post.get('vote_count') - 1);
+    this.render();
+    this.$('.upvoted').removeClass('upvoted').addClass('upvote');
+    newVote.save();
+  },
+
+  undownvote: function () {
+    var post = this.model;
+    var newVote = new Yeehaw.Models.Downvote({ post_id: post.id, path: '/undislike' });
+    post.set('up_voted', null);
+    post.set('vote_count', post.get('vote_count') + 1);
+    this.render();
+    this.$('.downvoted').removeClass('downvoted').addClass('downvote');
     newVote.save();
   },
 
