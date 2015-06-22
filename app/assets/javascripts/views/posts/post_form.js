@@ -1,9 +1,10 @@
 Yeehaw.Views.PostForm = Backbone.View.extend({
   template: JST['posts/form'],
   className: 'new-post',
-  
+
   events: {
-    'click button': 'createPost'
+    'click .save_yeehaw': 'createPost',
+    'click .close': 'hidePostForm'
   },
 
   initialize: function (options) {
@@ -14,6 +15,7 @@ Yeehaw.Views.PostForm = Backbone.View.extend({
   createPost: function (e) {
     e.preventDefault();
     var attrs = this.$('form').serializeJSON();
+    if (!attrs.body) { return; }
     this.model.set(attrs);
     this.model.set('group_id', this.collection.group.id);
     this.model.save({}, {
@@ -22,6 +24,11 @@ Yeehaw.Views.PostForm = Backbone.View.extend({
         Backbone.history.loadUrl();
       }.bind(this)
     });
+  },
+
+  hidePostForm: function (e) {
+    e.preventDefault();
+    $('.appear').removeClass('appear');
   },
 
   render: function () {

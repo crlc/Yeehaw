@@ -36,6 +36,7 @@ Yeehaw.Views.ReplyForm = Backbone.View.extend({
       group_id: this.collection.post.get("group_id"),
       post_id: this.collection.post.id
     };
+    if (!params.body) { return; }
 
     this.collection.create(params, { wait: true });
     this.render();

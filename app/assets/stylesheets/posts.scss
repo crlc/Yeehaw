@@ -15,14 +15,14 @@
 }
 
 .m-content {
-  background-color: $white;
+  background-color: #fff;
   border-radius: 3px;
+  font-size: 18px;
   height: auto;
   left: 50%;
   max-height: 80%;
   overflow-y: scroll;
   padding: 20px;
-  padding-left: 4%;
   position: fixed;
   top: 50%;
   -moz-transform: rotate(-50%, -50%);
@@ -44,9 +44,9 @@
   z-index: 68;
 }
 
+.glyphicon-pencil,
 .yeehaw-meta:hover {
   cursor: pointer;
-  // text-shadow: 0 1px 1px $color-5;
 }
 
 .yeehaw {
@@ -95,7 +95,6 @@ p {
 .votecount {
   color: $color-4;
   display: block;
-  font-family: 'AvenirLTStd-Heavy';
   font-size: 30px;
   padding-bottom: 10px;
   padding-top: 10px;
@@ -127,6 +126,6 @@ p {
   max-width: 98%;
   padding: 5px;
   position: absolute;
-  right: 0;
+  right: 1%;
   width: 100%;
 }

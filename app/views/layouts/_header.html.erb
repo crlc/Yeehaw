@@ -15,8 +15,9 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
         <% if signed_in? %>
-        <li><a href="#/" title="Home"><span class="glyphicon glyphicon-home"></span>Home</a></li>
-        <li><a href="#/groups/" title="Peek"><span class="glyphicon glyphicon-globe"></span>Peek</a></li>
+          <li><a class="compose" title="Compose" role="button"><span class="glyphicon glyphicon-pencil"></span>Compose</a></li>
+          <li><a href="#/" title="Home"><span class="glyphicon glyphicon-home"></span>Home</a></li>
+          <li><a href="#/groups/" title="Peek"><span class="glyphicon glyphicon-globe"></span>Peek</a></li>
           <li id='add-dropdown' class='dropdown'>
             <a href="#" class='dropdown-toggle' data-toggle='dropdown'
               role="button" aria-expanded="false" title="Me">
@@ -27,7 +28,6 @@
               <li><a href="#/posts/">My Yeehaws</a></li>
               <li><a href="#/replies/">My Replies</a></li>
             </ul>
-
           </li>
           <li><a data-method="delete" href="<%= session_url %>" title="Signout"><span class="glyphicon glyphicon-log-out"></span>Signout</a></li>
         <% else %>

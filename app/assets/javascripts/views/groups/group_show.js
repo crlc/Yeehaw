@@ -16,6 +16,10 @@ Yeehaw.Views.GroupShow = Backbone.CompositeView.extend({
     this.addSubview('.posts', view);
   },
 
+  showPostForm: function () {
+    $('.new-post').addClass('appear');
+  },
+
   postForm: function () {
     $('.posts').addClass('np-form');
     $('.bar').addClass('np-form');
@@ -34,6 +38,7 @@ Yeehaw.Views.GroupShow = Backbone.CompositeView.extend({
     this.collection.each( this.addPost.bind(this) );
     if (this.model.get("member?")) {
       this.postForm();
+      $('a.compose').on('click', this.showPostForm);
     }
     return this;
   }

@@ -11,19 +11,19 @@
   }
 
   .navbar-brand {
-    color: $white;
+    color: #fff;
 
     &:hover,
     &:focus {
       color: $color-1; }}
 
   .navbar-text {
-    color: $white; }
+    color: #fff; }
 
   .navbar-nav {
     > li {
       > a {
-        color: $white;
+        color: #fff;
 
         &:hover,
         &:focus {
@@ -51,14 +51,14 @@
       background-color: $color-2; }
 
     .icon-bar {
-      background-color: $white; }}
+      background-color: #fff; }}
 
   .navbar-collapse,
   .navbar-form {
-    border-color: $white;}
+    border-color: #fff;}
 
   .navbar-link {
-    color: $white;
+    color: #fff;
 
     &:hover {
       color: $color-1; }}}
@@ -66,7 +66,7 @@
 @media (max-width: 767px) {
   .navbar-default .navbar-nav .open .dropdown-menu {
     > li > a {
-      color: $white;
+      color: #fff;
 
       &:hover,
       &:focus {

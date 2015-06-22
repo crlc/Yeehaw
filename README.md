@@ -59,13 +59,12 @@ I'll need to add `search` routes to both the Groups and Posts controllers. On th
 ### Bonus Features (TBD)
 - [ ] Pagination/infinite scroll
 - [ ] Typeahead search bar
-- [ ] "Upvote/downvote" buttons for posts and replies
+- [x] "Upvote/downvote" buttons for posts and replies
 - [ ] Sort posts by new or popularity
 - [ ] User karma
-- [ ] Post types (image posts, etc)
 - [ ] Sharing posts
+- [ ] Post types (image posts, etc)
 - [ ] Multiple sessions/session management
-- [ ] Change hosting from heroku to digital ocean
 
 [phase-one]: ./docs/phases/phase1.md
 [phase-two]: ./docs/phases/phase2.md

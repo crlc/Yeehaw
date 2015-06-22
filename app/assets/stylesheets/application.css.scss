@@ -21,14 +21,6 @@ $color-3: #00A9A5;
 $color-4: #4E8098;
 $color-5: #90C2E7;
 
-$bg-default: #57e2ca;
-$bg-highlight: #0dd5b2;
-$white: #fff;
-$black: #000;
-$dk-gray: #ccc;
-$lt-gray: #eee;
-
-
 @import 'groups';
 @import 'posts';
 @import 'sessions';
@@ -40,7 +32,7 @@ $lt-gray: #eee;
 
 .new-post form,
 .new-reply form {
-  padding-right: 7%;
+  // padding-right: 7%;
 
   input, textarea {
     border: 1px solid rgba(100, 100, 100, .4);
@@ -59,38 +51,85 @@ $lt-gray: #eee;
 
 .new-post {
   background-color: #fff;
+  border-color: $color-4;
+  border-style: solid;
   border-radius: 3px;
-  margin-top: 2%;
-  max-width: 35%;
-  min-width: 30%;
-  opacity: .9;
+  margin-top: 10%;
+  width: 35%;
+  opacity: 1;
   position: fixed;
-  right: 3%;
+  right: -35%;
   top: 50px;
+
+  button.close {
+    position: relative;
+    z-index: 5;
+  }
 }
 
-.new-post form ::-webkit-input-placeholder,
-.new-reply form ::-webkit-input-placeholder {
-  // WebKit browsers
-  color: $color-4;
+.appear {
+  -webkit-animation: appear 1s;
+  -webkit-animation-fill-mode: forwards;
+  animation: appear 1s;
+  animation-fill-mode: forwards;
 }
 
 button.save_yeehaw {
   background-color: $color-3;
-  color: $white;
+  color: #fff;
   font-size: 16px;
 
   height: auto;
   width: auto;
+
+  border: 0;
+  border-radius: 4px;
+  box-shadow: 0 5px 0 $color-2;
+  cursor: pointer;
+  font: inherit;
+  margin: 0;
+  outline: 0;
+  padding: 12px 20px;
+  transition: all .1s linear;
 }
 
 button.save_yeehaw:hover {
-  background-color: $color-2;
+  background-color: $color-3;
 }
 
+button:active {
+  box-shadow: 0 2px 0 $color-2;
+  transform: translateY(3px);
+}
 
 body {
   background-attachment: fixed;
-  background-image: url('http://www.yikyakapp.com/wp-content/themes/yik-yak-web-general/img/home/map.png');
+  background-color: #faf7f2;
   padding-top: 50px;
+}
+
+@-webkit-keyframes appear {
+
+  50% {
+    -webkit-transform: translateX(-70%);
+    transform: translateX(-70%);
+  }
+
+  100% {
+    -webkit-transform: translateX(-200%);
+    transform: translateX(-200%);
+  }
+}
+
+@keyframes appear {
+
+  50% {
+    -webkit-transform: translateX(-70%);
+    transform: translateX(-70%);
+  }
+
+  100% {
+    -webkit-transform: translateX(-200%);
+    transform: translateX(-200%);
+  }
 }
