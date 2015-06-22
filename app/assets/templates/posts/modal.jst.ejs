@@ -6,11 +6,27 @@
     <header><strong><%= post.get("handle") %></strong></header>
     <p><a href="#/posts/<%= post.get('id') %>"><%= post.escape("body") %></a></p>
     <h6><span class="glyphicon glyphicon-time"></span> <%= post.get("time_ago")%> ago
-    <% if (post.get("author_id") === CURRENT_USER_ID) { %>
-      <button class="del" title="Close">&times;</button>
-    <% }; %>
-  </h6>
+      <% if (post.get("author_id") === CURRENT_USER_ID) { %>
+        <button class="del" title="Close">&times;</button>
+      <% }; %>
+    </h6>
   </blockquote>
+  <% if (post.get("member?")) { %>
+  <div class="votes">
+    <% if (post.escape("up_voted") === "true") { %>
+      <div class="upvoted glyphicon glyphicon-menu-up"></div>
+    <% } else { %>
+      <div class="upvote glyphicon glyphicon-menu-up"></div>
+    <% }; %>
 
+    <div class="votecount"><%= post.escape("vote_count") %></div>
+
+    <% if (post.escape("up_voted") === "false") { %>
+      <div class="downvoted glyphicon glyphicon-menu-down"></div>
+    <% } else { %>
+      <div class="downvote glyphicon glyphicon-menu-down"></div>
+    <% }; %>
+  </div>
+  <%  }; %>
   <div class="post-modal-replies"></div>
 </div>

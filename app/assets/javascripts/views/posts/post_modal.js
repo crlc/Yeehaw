@@ -5,6 +5,8 @@ Yeehaw.Views.PostModal = Backbone.CompositeView.extend({
     'click .del': 'destroyPost',
     'click .close': 'dismiss',
     'click .m-backdrop' : 'dismiss',
+    'click .upvote': 'upvote',
+    'click .downvote': 'downvote',
     'click a' : 'share'
   },
 
@@ -32,6 +34,36 @@ Yeehaw.Views.PostModal = Backbone.CompositeView.extend({
 
   share: function (event) {
     this.remove();
+  },
+
+  upvote: function () {
+    var post = this.model;
+    var newVote = new Yeehaw.Models.Upvote({ post_id: post.id });
+    var vote = 1;
+    if (post.get('up_voted') === false) {
+      vote += 1;
+    }
+    post.set('up_voted', true);
+    post.set('vote_count', post.get('vote_count') + vote);
+    this.render();
+    this.$('.downvoted').removeClass('downvoted').addClass('downvote');
+    this.$('.upvote').removeClass('upvote').addClass('upvoted');
+    newVote.save();
+  },
+
+  downvote: function () {
+    var post = this.model;
+    var newVote = new Yeehaw.Models.Downvote({ post_id: post.id });
+    var vote = 1;
+    if (post.get('up_voted') === true) {
+      vote += 1;
+    }
+    post.set('up_voted', false);
+    post.set('vote_count', post.get('vote_count') - vote);
+    this.render();
+    this.$('.upvoted').removeClass('upvoted').addClass('upvote');
+    this.$('.downvote').removeClass('downvote').addClass('downvoted');
+    newVote.save();
   },
 
   render: function () {

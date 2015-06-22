@@ -46,7 +46,7 @@ blockquote img:hover {
   z-index: 101;
 
   blockquote {
-    width: 100%;
+    width: 93%;
   }
 }
 
@@ -68,6 +68,8 @@ blockquote img:hover {
   -o-transform: rotate(-45px, 50%);
   -webkit-transform: translate(-45px, 50%);
   transform: translate(-45px, 50%);
+  position: relative;
+  z-index: 5;
 }
 
 .upvote {
