@@ -9,12 +9,13 @@ Yeehaw.Views.PostModal = Backbone.CompositeView.extend({
     'click .downvote': 'downvote',
     'click .upvoted': 'unupvote',
     'click .downvoted': 'undownvote',
-    'click a' : 'share'
+    'click a': 'share'
   },
 
   initialize: function () {
     this.model.fetch();
     this.listenTo(this.model, 'sync', this.render);
+    this.listenTo(this.model, 'add', this.render);
     this.replyListView = new Yeehaw.Views.RepliesList({
       collection: this.model.replies()
     });
@@ -40,7 +41,7 @@ Yeehaw.Views.PostModal = Backbone.CompositeView.extend({
 
   upvote: function () {
     var post = this.model;
-    var newVote = new Yeehaw.Models.Upvote({ post_id: post.id, path: '/like' });
+    var newVote = new Yeehaw.Models.Vote({ post_id: post.id, path: '/like' });
     var vote = 1;
     if (post.get('up_voted') === false) {
       vote += 1;
@@ -55,7 +56,7 @@ Yeehaw.Views.PostModal = Backbone.CompositeView.extend({
 
   downvote: function () {
     var post = this.model;
-    var newVote = new Yeehaw.Models.Downvote({ post_id: post.id, path: '/dislike' });
+    var newVote = new Yeehaw.Models.Vote({ post_id: post.id, path: '/dislike' });
     var vote = 1;
     if (post.get('up_voted') === true) {
       vote += 1;
@@ -70,7 +71,7 @@ Yeehaw.Views.PostModal = Backbone.CompositeView.extend({
 
   unupvote: function () {
     var post = this.model;
-    var newVote = new Yeehaw.Models.Upvote({ post_id: post.id, path: '/unlike' });
+    var newVote = new Yeehaw.Models.Vote({ post_id: post.id, path: '/unlike' });
     post.set('up_voted', null);
     post.set('vote_count', post.get('vote_count') - 1);
     this.render();
@@ -80,7 +81,7 @@ Yeehaw.Views.PostModal = Backbone.CompositeView.extend({
 
   undownvote: function () {
     var post = this.model;
-    var newVote = new Yeehaw.Models.Downvote({ post_id: post.id, path: '/undislike' });
+    var newVote = new Yeehaw.Models.Vote({ post_id: post.id, path: '/undislike' });
     post.set('up_voted', null);
     post.set('vote_count', post.get('vote_count') + 1);
     this.render();

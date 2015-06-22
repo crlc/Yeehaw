@@ -29,10 +29,10 @@
             </ul>
 
           </li>
-          <li><%= link_to " Signout", session_url, method: :delete, class: "glyphicon glyphicon-log-out", title: "Signout" %></li>
+          <li><a data-method="delete" href="<%= session_url %>" title="Signout"><span class="glyphicon glyphicon-log-out"></span>Signout</a></li>
         <% else %>
-          <li><%= link_to "Login", new_session_url %></li>
-          <li><%= link_to "Sign up", new_user_url %></li>
+          <li><a href="<%= new_session_url %>" title="Login">Login</a></li>
+          <li><a href="<%= new_user_url %>" title="Sign up">Sign up</a></li>
         <% end %>
       </ul>
     </div><!-- /.navbar-collapse -->

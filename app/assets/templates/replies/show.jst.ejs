@@ -1,21 +1,38 @@
+<div class="yeehaw-meta col-xs-10">
 
-<div class="avatar">
+<div class="avatar col-xs-2">
 <% if (reply.get('author_id') === this.model.collection.post.get("author_id")) { %>
 <img src="http://res.cloudinary.com/daqsrembo/image/upload/c_scale,w_40/v1434488266/icons_op.png" />
 <% } else { %>
 <img src="http://res.cloudinary.com/daqsrembo/image/upload/c_scale,w_40/v1434488266/icons_<%= (reply.get('author_id') + reply.get('post_id')) % 20 %>.png" />
 <% } %>
-
 </div>
-<div class="reply-body">
-<%= reply.escape('body')%>
 
+<p><%= reply.escape("body") %></p>
+</div>
 
+<% if (this.model.collection.post.get("member?")) { %>
+<div class="votes col-xs-2">
+  <% if (reply.escape("up_voted") === "true") { %>
+    <div class="upvoted glyphicon glyphicon-menu-up"></div>
+  <% } else { %>
+    <div class="upvote glyphicon glyphicon-menu-up"></div>
+  <% } %>
 
-<h6>
-  <span class="glyphicon glyphicon-time"></span> <%= reply.get('time_ago') || "less than a minute" %> ago
-  <% if (reply.get('author_id') === CURRENT_USER_ID) { %>
-    <button class="del" title="Delete">&times;</button>
-  <% }; %>
-</h6>
+  <span class="votecount"><%= reply.escape("vote_count") %></span>
+
+  <% if (reply.escape("up_voted") === "false") { %>
+    <div class="downvoted glyphicon glyphicon-menu-down"></div>
+  <% } else { %>
+    <div class="downvote glyphicon glyphicon-menu-down"></div>
+  <% } %>
+</div>
+<%  } %>
+
+<div class="timestamp col-xs-12">
+  <span class="glyphicon glyphicon-time"></span>
+  <%= reply.get("time_ago") || "less than a minute" %> ago
+  <% if (reply.get("author_id") === CURRENT_USER_ID) { %>
+    <button class="del" title="Close">&times;</button>
+  <% } %>
 </div>

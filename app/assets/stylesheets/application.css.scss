@@ -15,6 +15,11 @@
 @import 'bootstrap-sprockets';
 @import 'bootstrap';
 
+$color-1: #092327;
+$color-2: #0B5351;
+$color-3: #00A9A5;
+$color-4: #4E8098;
+$color-5: #90C2E7;
 
 $bg-default: #57e2ca;
 $bg-highlight: #0dd5b2;
@@ -29,13 +34,17 @@ $lt-gray: #eee;
 @import 'sessions';
 @import 'static_pages';
 
+.new-post form {
+  padding: 7%;
+}
+
 .new-post form,
 .new-reply form {
-  padding: 20px;
+  padding-right: 7%;
 
   input, textarea {
     border: 1px solid rgba(100, 100, 100, .4);
-    color: $black;
+    color: $color-1;
     font-size: 16px;
     resize: none;
     text-align: left;
@@ -43,18 +52,18 @@ $lt-gray: #eee;
   }
 
   input[name="handle"] {
-    color: $bg-default;
+    color: $color-3;
     width: 100%;
   }
 }
 
 .new-post {
-  background-color: $white;
+  background-color: #fff;
   border-radius: 3px;
   margin-top: 2%;
   max-width: 35%;
   min-width: 30%;
-  opacity: .7;
+  opacity: .9;
   position: fixed;
   right: 3%;
   top: 50px;
@@ -63,11 +72,11 @@ $lt-gray: #eee;
 .new-post form ::-webkit-input-placeholder,
 .new-reply form ::-webkit-input-placeholder {
   // WebKit browsers
-  color: $dk-gray;
+  color: $color-4;
 }
 
 button.save_yeehaw {
-  background-color: $bg-default;
+  background-color: $color-3;
   color: $white;
   font-size: 16px;
 
@@ -76,56 +85,12 @@ button.save_yeehaw {
 }
 
 button.save_yeehaw:hover {
-  background-color: $bg-highlight;
+  background-color: $color-2;
 }
 
-.avatar {
-  float: left;
-  position: absolute;
-}
 
-.reply-body {
-  padding-left: 10%;
-}
-
-h6 {
-  color: $dk-gray;
-  font-size: 14px;
-}
-
-header {
-  color: $bg-highlight;
-}
-
-.post-display {
-  padding-top: 3%;
-
-  blockquote {
-    float: left;
-  }
-
-  :hover {
-    background-color: rgb(252, 252, 252);
-    cursor: pointer;
-    text-shadow: 0 1px 1px $lt-gray;
-  }
-}
-
-p {
-  width: 95%;
-}
-
-blockquote {
-  background-color: $white;
-  border-bottom: 2px solid $lt-gray;
-  border-radius: 3px;
-  float: left;
-}
-
-body,
-blockquote.post {
-  background-image: url('http://www.yikyakapp.com/wp-content/themes/yik-yak-web-general/img/home/map.png');
+body {
   background-attachment: fixed;
+  background-image: url('http://www.yikyakapp.com/wp-content/themes/yik-yak-web-general/img/home/map.png');
+  padding-top: 50px;
 }
-
-body { padding-top: 50px; }

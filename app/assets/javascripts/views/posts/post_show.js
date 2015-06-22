@@ -1,9 +1,9 @@
 Yeehaw.Views.PostShow = Backbone.CompositeView.extend({
-  className: 'post-display',
+  className: 'yeehaw row',
   template: JST['posts/show'],
 
   events: {
-    'click blockquote': 'showPost',
+    'click .yeehaw-meta': 'showPost',
     'click .upvote': 'upvote',
     'click .downvote': 'downvote',
     'click .upvoted': 'unupvote',
@@ -19,7 +19,7 @@ Yeehaw.Views.PostShow = Backbone.CompositeView.extend({
 
   upvote: function () {
     var post = this.model;
-    var newVote = new Yeehaw.Models.Upvote({ post_id: post.id, path: '/like' });
+    var newVote = new Yeehaw.Models.Vote({ post_id: post.id, path: '/like' });
     var vote = 1;
     if (post.get('up_voted') === false) {
       vote += 1;
@@ -34,7 +34,7 @@ Yeehaw.Views.PostShow = Backbone.CompositeView.extend({
 
   downvote: function () {
     var post = this.model;
-    var newVote = new Yeehaw.Models.Downvote({ post_id: post.id, path: '/dislike' });
+    var newVote = new Yeehaw.Models.Vote({ post_id: post.id, path: '/dislike' });
     var vote = 1;
     if (post.get('up_voted') === true) {
       vote += 1;
@@ -49,7 +49,7 @@ Yeehaw.Views.PostShow = Backbone.CompositeView.extend({
 
   unupvote: function () {
     var post = this.model;
-    var newVote = new Yeehaw.Models.Upvote({ post_id: post.id, path: '/unlike' });
+    var newVote = new Yeehaw.Models.Vote({ post_id: post.id, path: '/unlike' });
     post.set('up_voted', null);
     post.set('vote_count', post.get('vote_count') - 1);
     this.render();
@@ -59,7 +59,7 @@ Yeehaw.Views.PostShow = Backbone.CompositeView.extend({
 
   undownvote: function () {
     var post = this.model;
-    var newVote = new Yeehaw.Models.Downvote({ post_id: post.id, path: '/undislike' });
+    var newVote = new Yeehaw.Models.Vote({ post_id: post.id, path: '/undislike' });
     post.set('up_voted', null);
     post.set('vote_count', post.get('vote_count') + 1);
     this.render();

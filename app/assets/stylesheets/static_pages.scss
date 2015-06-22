@@ -3,15 +3,19 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .navbar-default {
-  background-color: $bg-default;
-  border-color: $bg-highlight;
+  background-color: $color-3;
+  border-color: $color-2;
+
+  span.glyphicon {
+    padding: 0 5px;
+  }
 
   .navbar-brand {
     color: $white;
 
     &:hover,
     &:focus {
-      color: $black; }}
+      color: $color-1; }}
 
   .navbar-text {
     color: $white; }
@@ -23,28 +27,28 @@
 
         &:hover,
         &:focus {
-          color: $black; }}}
+          color: $color-1; }}}
 
     > .active {
       > a,
       > a:hover,
       > a:focus {
-        background-color: $bg-highlight;
-        color: $black; }}
+        background-color: $color-2;
+        color: $color-1; }}
 
     > .open {
       > a,
       > a:hover,
       > a:focus {
-        background-color: $bg-highlight;
-        color: $black; }}}
+        background-color: $color-2;
+        color: $color-1; }}}
 
   .navbar-toggle {
-    border-color: $bg-highlight;
+    border-color: $color-2;
 
     &:hover,
     &:focus {
-      background-color: $bg-highlight; }
+      background-color: $color-2; }
 
     .icon-bar {
       background-color: $white; }}
@@ -57,7 +61,7 @@
     color: $white;
 
     &:hover {
-      color: $black; }}}
+      color: $color-1; }}}
 
 @media (max-width: 767px) {
   .navbar-default .navbar-nav .open .dropdown-menu {
@@ -66,12 +70,12 @@
 
       &:hover,
       &:focus {
-        color: $black; }}
+        color: $color-1; }}
 
     > .active {
       > a,
       > a:hover,
       > a:focus, {
-        background-color: $bg-highlight;
-        color: $black; }}}
+        background-color: $color-2;
+        color: $color-1; }}}
 }

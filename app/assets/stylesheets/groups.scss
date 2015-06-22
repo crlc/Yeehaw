@@ -3,7 +3,8 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .bar li a {
-  background-color: $dk-gray;
+  background-color: $color-4;
+  color: $color-1;
 
   :link,
   :visited,
@@ -18,10 +19,6 @@
 .posts.np-form {
   margin-left: 10%;
   padding-right: 35%;
-
-  blockquote {
-    width: 95%;
-  }
 }
 
 .bar {
@@ -34,17 +31,14 @@
   margin-left: 20%;
   padding-right: 20%;
 
-  blockquote {
-    width: 100%;
-  }
-
   li a:hover {
-    background-color: $bg-highlight;
+    background-color: $color-4;
+    // text-shadow: 0 0px 1px $color-2;
   }
 
   li.active a,
   li.active a:hover {
-    background-color: $bg-default;
+    background-color: $color-3;
   }
 }
 

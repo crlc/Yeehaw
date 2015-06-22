@@ -2,51 +2,57 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300);
+// @import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600);
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,600,300);
+
 * {
+  font-family: 'Open Sans', sans-serif;
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-weight: 300;
-}
-body {
-  font-family: 'Source Sans Pro', sans-serif;
-  color: $black;
-  font-weight: 300;
-}
-body ::-webkit-input-placeholder {
-  /* WebKit browsers */
-  font-family: 'Source Sans Pro', sans-serif;
-  color: $black;
-  font-weight: 300;
-}
-body :-moz-placeholder {
-  /* Mozilla Firefox 4 to 18 */
-  font-family: 'Source Sans Pro', sans-serif;
-  color: $black;
-  opacity: 1;
-  font-weight: 300;
-}
-body ::-moz-placeholder {
-  /* Mozilla Firefox 19+ */
-  font-family: 'Source Sans Pro', sans-serif;
-  color: $black;
-  opacity: 1;
-  font-weight: 300;
-}
-body :-ms-input-placeholder {
-  /* Internet Explorer 10+ */
-  font-family: 'Source Sans Pro', sans-serif;
-  color: $black;
-  font-weight: 300;
+  font-weight: 400;
 }
 
-$bg-default: #57e2ca;
-$bg-highlight: #0dd5b2;
+body {
+  font-family: 'Open Sans', sans-serif;
+  color: $color-1;
+  font-weight: 400;
+}
+
+body :-moz-placeholder,
+body ::-moz-placeholder {
+  /* Mozilla Firefox 4 to 18 */
+  /* Mozilla Firefox 19+ */
+  font-family: 'Open Sans', sans-serif;
+  color: $color-1;
+  opacity: 1;
+  font-weight: 400;
+}
+body ::-webkit-input-placeholder,
+body :-ms-input-placeholder {
+  /* WebKit browsers */
+  /* Internet Explorer 10+ */
+  font-family: 'Open Sans', sans-serif;
+  color: $color-1;
+  font-weight: 400;
+}
+
+.home-slogan {
+  color: #fff;
+  clear: both;
+  padding: 15px;
+  font-size: 30px;
+  font-weight: 300;
+  line-height: 40px;
+  margin-top: 80px;
+  position: relative;
+  z-index: 2;
+}
+
 .wrapper {
-  background: $bg-default;
-  background: -webkit-linear-gradient(top left, $bg-default 0%, $bg-highlight 100%);
-  background: linear-gradient(to bottom right, $bg-default 0%, $bg-highlight 100%);
+  background: $color-3;
+  background: -webkit-linear-gradient(top left, $color-3 0%, $color-2 100%);
+  background: linear-gradient(to bottom right, $color-3 0%, $color-2 100%);
   position: absolute;
   top: 50px;
   left: 0;
@@ -55,7 +61,7 @@ $bg-highlight: #0dd5b2;
   margin-bottom: -50px;
   overflow: hidden;
 }
-.wrapper.form-success h2 {
+.wrapper.form-success .home-slogan {
   -webkit-transform: translateY(85px);
       -ms-transform: translateY(85px);
           transform: translateY(85px);
@@ -67,7 +73,7 @@ $bg-highlight: #0dd5b2;
   padding: 80px 0;
   text-align: center;
 }
-.wrapper h2 {
+.wrapper .home-slogan {
   padding-left: 8%;
   padding-top: 3%;
   font-size: 40px;
@@ -95,26 +101,26 @@ form input, form textarea {
   display: block;
   text-align: center;
   font-size: 18px;
-  color: $white;
+  color: #fff;
   -webkit-transition-duration: 0.25s;
           transition-duration: 0.25s;
-  font-weight: 300;
+  font-weight: 400;
 }
 form input:hover, form textarea:hover {
   background-color: rgba(255, 255, 255, .4);
 }
 form input:focus, form textarea:focus {
-  background-color: $white;
+  background-color: #fff;
   width: 300px;
-  color: #53e3a6;
+  color: $color-4;
 }
 form button {
   appearance: none;
   outline: 0;
-  background-color: $white;
+  background-color: #fff;
   border: 0;
   padding: 10px 15px;
-  color: #53e3a6;
+  color: $color-4;
   border-radius: 3px;
   width: 250px;
   cursor: pointer;
@@ -138,8 +144,8 @@ form button:hover {
   list-style: none;
   display: block;
   bottom: -10px;
-  -webkit-animation: square 25s infinite;
-  animation: square 25s infinite;
+  -webkit-animation: avatars 25s infinite;
+  animation: avatars 25s infinite;
   -webkit-transition-timing-function: linear;
   transition-timing-function: linear;
   -webkit-transform: translateZ(0);
@@ -196,23 +202,23 @@ form button:hover {
   -webkit-animation-delay: 11s;
           animation-delay: 11s;
 }
-@-webkit-keyframes square {
+@-webkit-keyframes avatars {
   0% {
     -webkit-transform: translateY(0);
             transform: translateY(0);
   }
   100% {
-    -webkit-transform: translateY(-700px) rotate(600deg);
-            transform: translateY(-700px) rotate(600deg);
+    -webkit-transform: translateY(-1000px) rotate(600deg);
+            transform: translateY(-1000px) rotate(600deg);
   }
 }
-@keyframes square {
+@keyframes avatars {
   0% {
     -webkit-transform: translateY(0);
             transform: translateY(0);
   }
   100% {
-    -webkit-transform: translateY(-700px) rotate(600deg);
-            transform: translateY(-700px) rotate(600deg);
+    -webkit-transform: translateY(-1000px) rotate(600deg);
+            transform: translateY(-1000px) rotate(600deg);
   }
 }
