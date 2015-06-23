@@ -69,6 +69,7 @@
 
 p {
   color: $color-1;
+  word-wrap: break-word;
 }
 
 .votes {
@@ -130,9 +131,9 @@ p {
   clear: both;
   color: $color-3;
   font-size: 16px;
-  max-width: 98%;
+  max-width: 96%;
   padding: 5px;
   position: absolute;
-  right: 1%;
+  right: 2%;
   width: 100%;
 }

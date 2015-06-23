@@ -5,7 +5,7 @@
 [domain]: http://yeehawapp.me
 
 ## Minimum Viable Product
-Yeehaw is a clone of Yik Yak built on Rails and Backbone. Users can:
+Yeehaw duplicates the Yik Yak functionality as a web application built on Rails and Backbone. Users can:
 
 <!-- This is a Markdown checklist. Use it to keep track of your progress! -->
 
@@ -36,28 +36,29 @@ I will implement user authentication in Rails. Users will be able to create post
 [Details][phase-one]
 
 ### Phase 2: Viewing Groups and Posts (~2 days)
-I will add API routes to serve group and post data as JSON, then add Backbone models and collections that fetch data from those routes. Users will be able to create posts/replies and view both groups and posts, inside a single Backbone app.
+I will add API routes to serve group and post data as JSON, then add Backbone models and collections that fetch data from those routes. Users will be able to create and delete posts/replies and view both groups and posts, inside a single Backbone app.
 
 [Details][phase-two]
 
-### Phase 3: Editing Posts and Groups (~2 days)
-I'll add functionality to the `PostForm` and `PostShow` to edit posts within a minute of creating them. I will also add the ability to join or leave a group. I will also add avatars to enable conversations within each post while keeping the users anonymous.
+### Phase 3: Joining Groups and Viewing Conversations (~2 days)
+I will add the ability to join or leave a group. I will also add avatars to enable conversations within each post while keeping the users anonymous. Users will have access to a view with all their authored posts and a view with all the posts they replied to.
 
 [Details][phase-three]
 
-### Phase 4: User Feeds (~1-2 days)
-I'll start by adding a `feed` route that uses the `current_user`'s `subscribed_groups` association to serve a list of posts ordered chronologically. On the Backbone side, I'll make a `FeedShow` view whose `posts` collection fetches from the new route.  Ultimately, this will be the page users see after logging in.
+### Phase 4: Voting (~2 days)
+I'll add voting to posts and replies. On the Backbone side, users will be able to upvote, downvote, and undo their votes.
 
 [Details][phase-four]
 
-### Phase 5: Searching for Groups and Posts (~2 days)
-I'll need to add `search` routes to both the Groups and Posts controllers. On the Backbone side, there will be a `SearchResults` composite view having `GroupsIndex` and `PostsIndex` subviews. These views will use plain old `groups` and `posts` collections, but they will fetch from the new `search` routes.
+### Phase 5: Odds and Ends (3+ days)
+Focus on design and best UI practices. Implement various improvements to posts display, forms, layout, mobile, colors, etc.
 
 [Details][phase-five]
 
 
 ### Bonus Features (TBD)
 - [x] Sharing posts
+- [x] CSS for mobile devices
 - [ ] Pagination/infinite scroll
 - [ ] Typeahead search bar
 - [ ] Sort posts by new or popularity

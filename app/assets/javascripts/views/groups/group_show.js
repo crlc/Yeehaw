@@ -16,16 +16,12 @@ Yeehaw.Views.GroupShow = Backbone.CompositeView.extend({
     this.addSubview('.posts', view);
   },
 
-  showPostForm: function () {
-    $('.new-post').addClass('appear');
-  },
-
   postForm: function () {
     var view = new Yeehaw.Views.PostForm({
       model: new Yeehaw.Models.Post(),
       collection: this.collection
     });
-    this.$el.append(view.render().$el);
+    this.$('.posts').prepend(view.render().$el);
   },
 
   render: function () {
@@ -33,11 +29,10 @@ Yeehaw.Views.GroupShow = Backbone.CompositeView.extend({
       group: this.model
     });
     this.$el.html(renderedContent);
-    this.collection.each( this.addPost.bind(this) );
     if (this.model.get("member?")) {
       this.postForm();
-      $('a.compose').on('click', this.showPostForm);
     }
+    this.collection.each( this.addPost.bind(this) );
     return this;
   }
 });

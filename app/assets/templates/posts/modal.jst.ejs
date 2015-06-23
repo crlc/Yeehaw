@@ -13,17 +13,17 @@
   <% if (post.get("member?")) { %>
   <div class="votes col-xs-2">
     <% if (post.escape("up_voted") === "true") { %>
-      <div class="upvoted glyphicon glyphicon-menu-up"></div>
+      <div class="upvoted glyphicon glyphicon-chevron-up"></div>
     <% } else { %>
-      <div class="upvote glyphicon glyphicon-menu-up"></div>
+      <div class="upvote glyphicon glyphicon-chevron-up"></div>
     <% } %>
 
     <span class="votecount"><%= post.escape("vote_count") %></span>
 
     <% if (post.escape("up_voted") === "false") { %>
-      <div class="downvoted glyphicon glyphicon-menu-down"></div>
+      <div class="downvoted glyphicon glyphicon-chevron-down"></div>
     <% } else { %>
-      <div class="downvote glyphicon glyphicon-menu-down"></div>
+      <div class="downvote glyphicon glyphicon-chevron-down"></div>
     <% } %>
   </div>
   <%  } %>

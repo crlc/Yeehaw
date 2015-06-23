@@ -1,20 +1,25 @@
-# Phase 4: User Feeds
+# Phase 4: Voting
 
 ## Rails
 ### Models
+* Post (votes)
+* Reply (votes)
 
 ### Controllers
-Api::PostsController (feed)
+Api::PostsController (votes)
+Api::RepliesController (votes)
 
 ### Views
-posts/feed.json.jbuilder
 
 ## Backbone
 ### Models
+* Vote
 
 ### Collections
 
 ### Views
-* FeedShow (composite view, contains PostsIndex subview)
+* PostShow (votes)
+* ReplyShow (votes)
 
 ## Gems/Libraries
+acts_as_votable

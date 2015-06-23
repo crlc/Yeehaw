@@ -1,20 +1,28 @@
-# Phase 3: Editing Posts and Groups
+# Phase 3: Joining Groups and Viewing Conversations
 
 ## Rails
 ### Models
+* Following
 
 ### Controllers
+Api::FollowingsController (create, destroy)
 
 ### Views
+* posts/index.json.jbuilder
+* replies/index.json.jbuilder
 
 ## Backbone
 ### Models
+* Following
 
 ### Collections
+* Followings
 
 ### Views
+* PostsShare (composite view, contains PostsShow subviews)
+* RepliesList (composite view, contains ReplyShow subviews)
 * PostForm
-* GroupForm
+* ReplyForm
 
 ## Gems/Libraries
 * Bootstrap

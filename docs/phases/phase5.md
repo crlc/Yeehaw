@@ -1,11 +1,9 @@
-# Phase 5: Searching for Groups and Posts
+# Phase 5: Odds and Ends
 
 ## Rails
 ### Models
 
 ### Controllers
-Api::GroupsController (search)
-Api::PostsController (search)
 
 ### Views
 
@@ -15,7 +13,5 @@ Api::PostsController (search)
 ### Collections
 
 ### Views
-* GroupSearchItem
-* SearchShow (composite view, contains GroupsIndex and PostsIndex subviews)
 
 ## Gems/Libraries
