@@ -33,11 +33,13 @@
             <ul class="dropdown-menu" role="menu">
               <li><a href="#/posts/">My Yeehaws</a></li>
               <li><a href="#/replies/">My Replies</a></li>
+              <li role="separator" class="divider"></li>
+
+              <li><a data-method="delete" href="<%= session_url %>" title="Signout">
+                <span class="glyphicon glyphicon-log-out"></span>Signout</a></li>
             </ul>
           </li>
 
-          <li><a data-method="delete" href="<%= session_url %>" title="Signout">
-            <span class="glyphicon glyphicon-log-out"></span>Signout</a></li>
         <% else %>
           <li><a href="<%= new_session_url %>" title="Login">Login</a></li>
           <li><a href="<%= new_user_url %>" title="Sign up">Sign up</a></li>

@@ -4,6 +4,7 @@ Yeehaw.Views.PostShow = Backbone.CompositeView.extend({
 
   events: {
     'click .yeehaw-meta': 'showPost',
+    'click .timestamp': 'showPost',
     'click .upvote': 'upvote',
     'click .downvote': 'downvote',
     'click .upvoted': 'unupvote',

@@ -44,9 +44,16 @@
   z-index: 68;
 }
 
+.group-show .timestamp:hover,
 .glyphicon-pencil,
-.yeehaw-meta:hover {
+.group-show .yeehaw-meta:hover {
   cursor: pointer;
+  text-shadow: 0 0 1px #ccc;
+}
+
+.upvote:hover,
+.downvote:hover {
+  text-shadow: 1px 1px 1px #ccc;
 }
 
 .yeehaw {

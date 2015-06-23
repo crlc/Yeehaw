@@ -25,7 +25,7 @@ Yeehaw.Views.PostForm = Backbone.View.extend({
       }.bind(this)
     });
   },
-
+  
   hidePostForm: function (e) {
     e.preventDefault();
     $('.appear').removeClass('appear');

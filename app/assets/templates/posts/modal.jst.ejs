@@ -7,7 +7,7 @@
   <button class="close">&times;</button>
   <div class="yeehaw-meta col-xs-10">
   <span class="handle"><%= post.get("handle") %></span>
-  <p><a href="#/posts/<%= post.get('id') %>"><%= post.escape("body") %></a></p>
+  <p><%= post.escape("body") %></p>
   </div>
 
   <% if (post.get("member?")) { %>
@@ -34,6 +34,7 @@
     <% if (post.get("author_id") === CURRENT_USER_ID) { %>
       <button class="del" title="Close">&times;</button>
     <% } %>
+    <a href="#/posts/<%= post.get('id') %>" title="Share"><div class="glyphicon glyphicon-share"></div></a>
   </div>
 
   </div>

@@ -3,8 +3,8 @@ Yeehaw.Views.ReplyForm = Backbone.View.extend({
   className: 'new-reply',
 
   events:{
-    'mousedown textarea': 'clearTextArea',
-    'keyup textarea': 'renderPreview',
+    'mousedown input': 'clearTextArea',
+    'keyup input': 'renderPreview',
     'click button': 'createReply'
   },
 
@@ -14,29 +14,29 @@ Yeehaw.Views.ReplyForm = Backbone.View.extend({
   },
 
   clearTextArea: function (event) {
-    this.$('textarea').empty();
+    this.$('input').empty();
   },
 
   render: function () {
     var renderedContent = this.template();
     this.$el.html(renderedContent);
-    this.renderPreview(this.$('textarea'));
+    this.renderPreview(this.$('input'));
     return this;
   },
 
   renderPreview: function () {
-    var count = 200 - this.$('textarea').val().length;
+    var count = 200 - this.$('input').val().length;
     this.$('.preview').html(_.escape(count));
   },
 
   createReply: function (event) {
     event.preventDefault();
     var params = {
-      body: this.$('textarea').val(),
+      body: this.$('input').val(),
       group_id: this.collection.post.get("group_id"),
       post_id: this.collection.post.id
     };
-    if (!params.body) { return; }
+    if (!params.body) {return;}
 
     this.collection.create(params, { wait: true });
     this.render();

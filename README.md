@@ -19,7 +19,7 @@ Yeehaw is a clone of Yik Yak built on Rails and Backbone. Users can:
 - [x] View a feed of subscribed or `nearby` groups
 - [x] View posts from other groups
 - [x] Avatars for conversations
-- [ ] Search for groups by name
+- [x] "Upvote/downvote" buttons for posts and replies
 
 ## Design Docs
 * [View Wireframes][views]
@@ -57,12 +57,12 @@ I'll need to add `search` routes to both the Groups and Posts controllers. On th
 
 
 ### Bonus Features (TBD)
+- [x] Sharing posts
 - [ ] Pagination/infinite scroll
 - [ ] Typeahead search bar
-- [x] "Upvote/downvote" buttons for posts and replies
 - [ ] Sort posts by new or popularity
 - [ ] User karma
-- [ ] Sharing posts
+- [ ] Search for groups by name
 - [ ] Post types (image posts, etc)
 - [ ] Multiple sessions/session management
 
