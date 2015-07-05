@@ -4,7 +4,7 @@ Yeehaw.Views.PostForm = Backbone.View.extend({
 
   events: {
     'click .save_yeehaw': 'createPost',
-    'click .glyphicon-resize-full': 'toggleHandle'
+    'click span': 'toggleHandle'
   },
 
   initialize: function (options) {
@@ -29,8 +29,10 @@ Yeehaw.Views.PostForm = Backbone.View.extend({
   toggleHandle: function () {
     if (this.$('.hide').length) {
       this.$('.hide').removeClass('hide').addClass('display');
+      this.$('span').toggleClass('glyphicon-resize-full glyphicon-resize-small');
     } else {
       this.$('.display').removeClass('display').addClass('hide');
+      this.$('span').toggleClass('glyphicon-resize-small glyphicon-resize-full');
     }
   },
 
