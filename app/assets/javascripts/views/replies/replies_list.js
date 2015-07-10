@@ -8,8 +8,8 @@ Yeehaw.Views.RepliesList = Backbone.CompositeView.extend({
         collection: this.collection
       });
       this.addSubview('.reply-list-form', this.replyFormView);
-      this.collection.each(this.addReply.bind(this));
     }
+    this.collection.each(this.addReply.bind(this));
     this.listenTo(this.collection, 'add', this.addReply);
   },
 
