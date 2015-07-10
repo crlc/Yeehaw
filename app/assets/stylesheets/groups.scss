@@ -45,6 +45,7 @@
 .glyphicon-check,
 .glyphicon-unchecked {
   cursor: pointer;
+  z-index: 1;
 }
 
 .list-group {
@@ -54,7 +55,7 @@
 }
 
 @media only screen
-  and (min-device-width: 320px) 
+  and (min-device-width: 320px)
   and (max-device-width: 568px) {
   .bar,
   .posts {

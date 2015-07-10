@@ -49,8 +49,8 @@ Yeehaw.Views.PostModal = Backbone.CompositeView.extend({
     post.set('up_voted', true);
     post.set('vote_count', post.get('vote_count') + vote);
     this.render();
-    this.$('.downvoted').removeClass('downvoted').addClass('downvote');
-    this.$('.upvote').removeClass('upvote').addClass('upvoted');
+    this.$('yeehaw .downvoted').toggleClass('downvoted downvote');
+    this.$('yeehaw .upvote').toggleClass('upvote upvoted');
     newVote.save();
   },
 
@@ -64,8 +64,8 @@ Yeehaw.Views.PostModal = Backbone.CompositeView.extend({
     post.set('up_voted', false);
     post.set('vote_count', post.get('vote_count') - vote);
     this.render();
-    this.$('.upvoted').removeClass('upvoted').addClass('upvote');
-    this.$('.downvote').removeClass('downvote').addClass('downvoted');
+    this.$('yeehaw .upvoted').toggleClass('upvoted upvote');
+    this.$('yeehaw .downvote').toggleClass('downvote downvoted');
     newVote.save();
   },
 
@@ -75,7 +75,7 @@ Yeehaw.Views.PostModal = Backbone.CompositeView.extend({
     post.set('up_voted', null);
     post.set('vote_count', post.get('vote_count') - 1);
     this.render();
-    this.$('.upvoted').removeClass('upvoted').addClass('upvote');
+    this.$('yeehaw .upvoted').toggleClass('upvoted upvote');
     newVote.save();
   },
 
@@ -85,7 +85,7 @@ Yeehaw.Views.PostModal = Backbone.CompositeView.extend({
     post.set('up_voted', null);
     post.set('vote_count', post.get('vote_count') + 1);
     this.render();
-    this.$('.downvoted').removeClass('downvoted').addClass('downvote');
+    this.$('yeehaw .downvoted').toggleClass('downvoted downvote');
     newVote.save();
   },
 
