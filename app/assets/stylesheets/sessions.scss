@@ -62,9 +62,11 @@ body :-ms-input-placeholder {
 }
 
 .wrapper.form-success .home-slogan {
+     -moz-transform: translateY(85px);
+      -ms-transform: translateY(85px);
+       -o-transform: translateY(85px);
   -webkit-transform: translateY(85px);
-  -ms-transform: translateY(85px);
-  transform: translateY(85px);
+          transform: translateY(85px);
 }
 
 .container {
@@ -110,7 +112,7 @@ form input, form textarea {
   outline: 0;
   text-align: center;
   -webkit-transition-duration: .25s;
-  transition-duration: .25s;
+          transition-duration: .25s;
   width: 250px;
 }
 
@@ -135,16 +137,16 @@ form button {
   outline: 0;
   padding: 10px 15px;
   -webkit-transition-duration: .25s;
-  transition-duration: .25s;
+          transition-duration: .25s;
   width: 250px;
 }
 
 .bg-bubbles {
+  height: 100%;
+  left: 0;
   position: absolute;
   top: 0;
-  left: 0;
   width: 100%;
-  height: 100%;
   z-index: 1;
 }
 
@@ -154,10 +156,11 @@ form button {
   display: block;
   bottom: -10px;
   -webkit-animation: avatars 25s infinite;
-  animation: avatars 25s infinite;
+          animation: avatars 25s infinite;
   -webkit-transition-timing-function: linear;
-  transition-timing-function: linear;
+          transition-timing-function: linear;
   -webkit-transform: translateZ(0);
+          transform: translateZ(0);
 }
 
 .bg-bubbles li:nth-child(1) {

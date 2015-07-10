@@ -58,8 +58,12 @@ form .glyphicon-resize-small {
   cursor: pointer;
   position: absolute;
   right: 85px;
-  top: 14px;
-  transform: translate(0, 50%);
+  top: 0;
+     -moz-transform: translate(0, 125%);
+      -ms-transform: translate(0, 125%);
+       -o-transform: translate(0, 125%);
+  -webkit-transform: translate(0, 125%);
+          transform: translate(0, 125%);
 }
 
 button.save_yeehaw {
@@ -77,8 +81,8 @@ button.save_yeehaw {
   font: inherit;
   margin: 0;
   outline: 0;
-  // padding: 12px 20px;
-  transition: all .1s linear;
+  -webkit-transition: all .1s linear;
+          transition: all .1s linear;
   position: absolute;
   right: 0;
   top: 7px;
@@ -90,7 +94,12 @@ button.save_yeehaw:hover {
 
 button:active {
   box-shadow: 0 2px 0 $color-2;
-  transform: translateY(3px);
+  color: #fff;
+     -moz-transform: translateY(3px);
+      -ms-transform: translateY(3px);
+       -o-transform: translateY(3px);
+  -webkit-transform: translateY(3px);
+          transform: translateY(3px);
 }
 
 body {

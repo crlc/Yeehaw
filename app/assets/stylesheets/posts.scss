@@ -10,7 +10,6 @@
   position: relative;
   text-align: center;
   top: 50%;
-  // transform: translateY(26%);
   vertical-align: middle;
 }
 
@@ -25,11 +24,11 @@
   padding: 20px;
   position: fixed;
   top: 50%;
-  -moz-transform: rotate(-50%, -50%);
-  -ms-transform: rotate(-50%, -50%);
-  -o-transform: rotate(-50%, -50%);
+     -moz-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+       -o-transform: translate(-50%, -50%);
   -webkit-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
   width: 60%;
   z-index: 101;
 }
@@ -44,9 +43,9 @@
   z-index: 68;
 }
 
-.group-show .timestamp:hover,
+#main .timestamp:hover,
 .glyphicon-pencil,
-.group-show .yeehaw-meta:hover {
+#main .yeehaw-meta:hover {
   cursor: pointer;
   text-shadow: 0 0 1px #ccc;
 }
@@ -80,7 +79,6 @@ p {
   position: relative;
   text-align: center;
   top: 50%;
-  // transform: translateY(26%);
   vertical-align: middle;
 }
 
