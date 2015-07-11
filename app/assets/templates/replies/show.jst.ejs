@@ -11,7 +11,6 @@
 <p><%= reply.escape("body") %></p>
 </div>
 
-<% if (this.model.collection.post.get("member?")) { %>
 <div class="votes col-xs-2">
   <% if (reply.escape("up_voted") === "true") { %>
     <div class="upvoted glyphicon glyphicon-chevron-up"></div>
@@ -27,7 +26,6 @@
     <div class="downvote glyphicon glyphicon-chevron-down"></div>
   <% } %>
 </div>
-<%  } %>
 
 <div class="timestamp col-xs-12">
   <span class="glyphicon glyphicon-time"></span>
