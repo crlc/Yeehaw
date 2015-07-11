@@ -12,6 +12,8 @@ Yeehaw.Views.ReplyShow = Backbone.View.extend({
 
   destroyReply: function (event) {
     event.preventDefault();
+    post = this.model.collection.post;
+    post.set('reply_count', post.get('reply_count') - 1);
     this.model.destroy();
     this.remove();
   },

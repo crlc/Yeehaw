@@ -31,14 +31,15 @@ Yeehaw.Views.ReplyForm = Backbone.View.extend({
 
   createReply: function (event) {
     event.preventDefault();
+    post = this.collection.post;
     var params = {
       body: this.$('input').val(),
-      group_id: this.collection.post.get("group_id"),
-      post_id: this.collection.post.id
+      group_id: post.get("group_id"),
+      post_id: post.id
     };
     if (!params.body) {return;}
-
     this.collection.create(params, { wait: true });
+    post.set("reply_count", post.get("reply_count") + 1 );
     this.render();
   }
 });
