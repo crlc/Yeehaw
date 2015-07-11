@@ -3,6 +3,7 @@ Yeehaw.Views.PostShare = Backbone.CompositeView.extend({
 
   events: {
     'click .del': 'destroyPost',
+    'click .back': 'back',
     'click .upvote': 'upvote',
     'click .downvote': 'downvote',
     'click .upvoted': 'unupvote',
@@ -10,7 +11,6 @@ Yeehaw.Views.PostShare = Backbone.CompositeView.extend({
   },
 
   initialize: function () {
-    this.model.fetch();
     this.listenTo(this.model, 'sync', this.render);
     this.replyListView = new Yeehaw.Views.RepliesList({
       collection: this.model.replies()
@@ -18,10 +18,14 @@ Yeehaw.Views.PostShare = Backbone.CompositeView.extend({
     this.addSubview('.post-replies', this.replyListView);
   },
 
+  back: function () {
+    Backbone.history.history.back();
+  },
+
   destroyPost: function (event) {
     event.preventDefault();
     this.model.destroy();
-    this.remove();
+    this.back();
   },
 
   upvote: function () {
