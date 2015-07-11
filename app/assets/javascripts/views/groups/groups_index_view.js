@@ -17,16 +17,16 @@ Yeehaw.Views.GroupsIndexView = Backbone.View.extend({
       if (model.get('id') !== 1) {
         model.unfollow();
       }
-    }.bind(this));
+    });
     this.model.follow();
-    $('.glyphicon-check').slice(1).removeClass('glyphicon-check').addClass('glyphicon-unchecked');
-    this.$('.glyphicon-unchecked').removeClass('glyphicon-unchecked').addClass('glyphicon-check');
+    $('.glyphicon-check').slice(1).toggleClass('glyphicon-check glyphicon-unchecked');
+    this.$('.glyphicon-unchecked').toggleClass('glyphicon-unchecked glyphicon-check');
   },
 
   unfollow: function () {
     if (this.model.id === 1) {return;}
     this.model.unfollow();
-    this.$('.glyphicon-check').removeClass('glyphicon-check').addClass('glyphicon-unchecked');
+    this.$('.glyphicon-check').toggleClass('glyphicon-check glyphicon-unchecked');
   },
 
   render: function () {
