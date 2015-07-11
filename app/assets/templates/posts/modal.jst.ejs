@@ -28,7 +28,7 @@
 
   <div class="timestamp col-xs-12">
     <span class="glyphicon glyphicon-time"></span>
-    <%= post.get("time_ago") || "less than a minute" %> ago
+    <%= post.get("time_ago") %> ago
     <% if (post.get("author_id") === CURRENT_USER_ID) { %>
       <button class="del" title="Close">&times;</button>
     <% } %>

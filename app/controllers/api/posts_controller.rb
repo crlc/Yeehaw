@@ -4,7 +4,7 @@ class Api::PostsController < ApplicationController
     @post.author_id = current_user.id
 
     if @post.save
-      render json: @post
+      render 'create'
     else
       render json: @post.errors.full_messages, status: :unprocessable_entity
     end

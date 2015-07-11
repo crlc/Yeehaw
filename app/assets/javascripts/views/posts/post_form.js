@@ -21,7 +21,6 @@ Yeehaw.Views.PostForm = Backbone.View.extend({
     this.model.save({}, {
       success: function () {
         this.collection.add(this.model);
-        Backbone.history.loadUrl();
       }.bind(this)
     });
   },
