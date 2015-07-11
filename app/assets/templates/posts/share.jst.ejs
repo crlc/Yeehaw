@@ -1,9 +1,7 @@
 <div class="m-content">
-  <button class="back" title="Back">Back</button>
   <div class="yeehaw row">
 
-
-  <div class="yeehaw-meta col-xs-10">
+  <div class="col-xs-10">
   <span class="handle"><%= post.get("handle") %></span>
   <p><%= post.escape("body") %></p>
   </div>
@@ -24,7 +22,7 @@
     <% } %>
   </div>
 
-  <div class="timestamp col-xs-12">
+  <div class="timestamp back col-xs-12" title="Back">
     <span class="glyphicon glyphicon-time"></span>
     <%= post.get("time_ago") %> ago
     <% if (post.get("author_id") === CURRENT_USER_ID) { %>
