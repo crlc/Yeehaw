@@ -4,7 +4,7 @@ class Api::RepliesController < ApplicationController
     @reply.author_id = current_user.id
 
     if @reply.save
-      render json: @reply
+      render 'show'
     else
       render json: @reply.errors.full_messages, status: :unprocessable_entity
     end
@@ -26,25 +26,25 @@ class Api::RepliesController < ApplicationController
   def upvote
     @reply = Reply.find(params[:id])
     @reply.liked_by current_user
-    render json: @reply
+    render 'show'
   end
 
   def downvote
     @reply = Reply.find(params[:id])
     @reply.disliked_by current_user
-    render json: @reply
+    render 'show'
   end
 
   def unupvote
     @reply = Reply.find(params[:id])
     @reply.unliked_by current_user
-    render json: @reply
+    render 'show'
   end
 
   def undownvote
     @reply = Reply.find(params[:id])
     @reply.undisliked_by current_user
-    render json: @reply
+    render 'show'
   end
 
   private
