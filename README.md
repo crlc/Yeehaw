@@ -2,7 +2,7 @@
 
 [Website link][domain]
 
-[domain]: http://yeehawapp.me
+[domain]: http://yeehaw.herokuapp.com
 
 ## Minimum Viable Product
 Yeehaw duplicates the Yik Yak functionality as a web application built on Rails and Backbone. Users can:
