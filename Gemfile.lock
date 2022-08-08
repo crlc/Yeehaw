@@ -1,3 +1,19 @@
+GIT
+  remote: https://github.com/ged/ruby-pg
+  revision: 28b73d27893e3a7105fb280cf1df088cac175d43
+  specs:
+    pg (1.4.2)
+
+GIT
+  remote: https://github.com/meleyal/backbone-on-rails
+  revision: 8952da16397913f6a73a66a2e7accebde22f6eac
+  specs:
+    backbone-on-rails (1.2.0.0)
+      eco
+      ejs
+      jquery-rails
+      railties
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -44,11 +60,6 @@ GEM
     autoprefixer-rails (5.2.0)
       execjs
       json
-    backbone-on-rails (1.2.0.0)
-      eco
-      ejs
-      jquery-rails
-      railties
     bcrypt (3.1.10)
     better_errors (2.1.1)
       coderay (>= 1.0.0)
@@ -60,8 +71,6 @@ GEM
       autoprefixer-rails (>= 5.0.0.1)
       sass (>= 3.2.19)
     builder (3.2.2)
-    byebug (5.0.0)
-      columnize (= 0.9.0)
     coderay (1.1.0)
     coffee-rails (4.1.0)
       coffee-script (>= 2.2.0)
@@ -70,7 +79,6 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.9.1.1)
-    columnize (0.9.0)
     debug_inspector (0.0.2)
     eco (1.0.0)
       coffee-script
@@ -90,7 +98,7 @@ GEM
       rails-dom-testing (~> 1.0)
       railties (>= 4.2.0)
       thor (>= 0.14, < 2.0)
-    json (1.8.3)
+    json (1.8.6)
     loofah (2.0.2)
       nokogiri (>= 1.5.9)
     mail (2.6.3)
@@ -102,7 +110,6 @@ GEM
     multi_json (1.11.0)
     nokogiri (1.6.6.2)
       mini_portile (~> 0.6.0)
-    pg (0.18.2)
     pry (0.10.1)
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
@@ -177,16 +184,16 @@ PLATFORMS
 DEPENDENCIES
   acts_as_votable (~> 0.10.0)
   annotate
-  backbone-on-rails
+  backbone-on-rails!
   bcrypt (~> 3.1.7)
   better_errors
   binding_of_caller
   bootstrap-sass
-  byebug
   coffee-rails (~> 4.1.0)
   jbuilder (~> 2.0)
   jquery-rails
-  pg
+  pg!
+  pry
   pry-rails
   rails (= 4.2.1)
   sass-rails (~> 5.0)
