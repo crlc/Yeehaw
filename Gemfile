@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+ruby '2.5.1'
 
 gem 'rails', '4.2.1'
 gem 'backbone-on-rails', :git => 'https://github.com/meleyal/backbone-on-rails'
