@@ -1,4 +1,4 @@
-class Group < ActiveRecord::Base
+class Group < ApplicationRecord
   validates :title, presence: true, uniqueness: true
 
   has_many :posts

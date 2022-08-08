@@ -1,4 +1,4 @@
-class Reply < ActiveRecord::Base
+class Reply < ApplicationRecord
   validates :body, :author_id, :post_id, presence: true
   validates :body, length: { maximum: 200 }
 

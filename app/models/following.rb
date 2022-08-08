@@ -1,4 +1,4 @@
-class Following < ActiveRecord::Base
+class Following < ApplicationRecord
   validates :group_id, :follower_id, presence: true
 
   belongs_to :group
