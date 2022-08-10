@@ -12,6 +12,7 @@ gem 'jquery-rails'
 gem 'jbuilder', '~> 2.0'
 gem 'bcrypt', '~> 3.1.7'
 gem 'acts_as_votable', '~> 0.10.0'
+gem 'bootsnap'
 
 gem 'sdoc', '~> 0.4.0', group: :doc
 
@@ -23,4 +24,5 @@ group :development, :test do
   gem 'pry-rails'
   gem 'web-console', '~> 2.0'
   gem 'spring'
+  gem 'listen'
 end
