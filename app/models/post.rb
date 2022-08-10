@@ -1,4 +1,4 @@
-class Post < ActiveRecord::Base
+class Post < ApplicationRecord
   validates :body, :author_id, :group_id, presence: true
   validates :body, length: { maximum: 200 }
   validates :handle, length: { maximum: 15 }
